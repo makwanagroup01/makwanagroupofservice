@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MAKWANA GROUP OF SERVICES</title>
+
+<style>
+/* =================================================
+   MAKWANA GROUP OF SERVICES - MASTER FINAL V39
+   (NAME & MOBILE NUMBER UPDATED)
+================================================= */
+*{ margin:0; padding:0; box-sizing:border-box; font-family:"Segoe UI",Arial,sans-serif; }
+body{ background-color: #f8fafc; color: #0f172a; overflow-x: hidden; }
+
+/* =========================================================================
+   🔥 3D VFX PRELOADER (INTRO SCREEN)
+========================================================================== */
+#vfx-loader {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background: #020617; z-index: 999999; display: flex;
+    justify-content: center; align-items: center; flex-direction: column;
+    animation: fadeOutLoader 0.8s ease 2.5s forwards;
+}
+.loader-content {
+    position: relative; display: flex; flex-direction: column; align-items: center;
+    animation: popInLoader 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 0 20px;
+}
+.glow-ring {
+    position: absolute; width: 130px; height: 130px; border-radius: 50%;
+    border: 4px solid transparent; border-top-color: #38bdf8; border-right-color: #8b5cf6;
+    border-bottom-color: #e11d48; animation: spinRing 1s linear infinite; top: -15px;
+}
+.loader-logo { 
+    width: 100px; height: 100px; border-radius: 20px; object-fit: contain; 
+    background: #fff; z-index: 2; box-shadow: 0 0 40px rgba(56,189,248,0.4);
+}
+.loader-title { 
+    color: #fff; font-size: clamp(24px, 5vw, 36px); margin-top: 35px; font-weight: 900; 
+    letter-spacing: 2px; background: linear-gradient(90deg, #38bdf8, #8b5cf6, #e11d48); 
+    -webkit-background-clip: text; color: transparent; text-transform: uppercase;
+    text-align: center; line-height: 1.3;
+}
+.loader-subtitle { color: #94a3b8; font-size: 14px; font-weight: 800; letter-spacing: 4px; margin-top: 8px; text-align: center;}
+
+@keyframes spinRing { 100% { transform: rotate(360deg); } }
+@keyframes popInLoader { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes fadeOutLoader { 100% { opacity: 0; visibility: hidden; pointer-events: none; z-index: -10; } }
+
+/* MAIN CONTENT REVEAL AFTER LOADER */
+#main-content, header, footer {
+    animation: revealMain 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.2s both;
+}
+@keyframes revealMain {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* HEADER */
+header{ 
+    position:sticky; top:0; z-index:900; backdrop-filter:blur(10px); 
+    background:rgba(255,255,255,0.98); border-bottom:1px solid #e2e8f0; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+.navbar{ max-width:1400px; margin:auto; min-height:80px; padding:10px 5%; display:flex; align-items:center; justify-content:space-between; }
+.logo{ display:flex; align-items:center; gap:15px; }
+.real-logo { width: 50px; height: 50px; object-fit: contain; border-radius: 10px; background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+.logo h1{ font-size:21px; color:#1e3a8a; letter-spacing: 0.5px; font-weight: 900;}
+.logo-highlight { background: linear-gradient(135deg, #2563eb, #e11d48); -webkit-background-clip: text; color: transparent; }
+.logo small{ color:#64748b; font-size:11px; letter-spacing: 1.5px; font-weight: 700; text-transform: uppercase; margin-top: 2px; display: block;}
+
+/* NAVIGATION */
+nav{ display:flex; align-items:center; gap:30px; }
+nav a{ color:#334155; text-decoration:none; font-size:15px; font-weight:700; transition:.3s; padding-bottom: 4px; border-bottom: 2px solid transparent;}
+nav a:hover{ color:#2563eb; transform: translateY(-2px);}
+nav a.active { color: #2563eb; border-bottom: 2px solid #2563eb; }
+.menu-btn{ display:none; background:none; color:#0f172a; border:0; font-size:28px; cursor:pointer; }
+
+/* PAGE SECTIONS SYSTEM */
+.page-section { display: none; animation: fadeIn 0.4s ease-in-out; }
+.page-section.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* =================================================
+   1. HOME PAGE HERO
+================================================= */
+.home-wrapper { 
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    padding-bottom: 60px; 
+    border-bottom: 1px solid #cbd5e1;
+}
+
+/* TOP BANNER SHOWCASE */
+.csc-hero-banner {
+    width: 100%; max-width: 1200px; margin: 30px auto 20px auto; padding: 0 5%;
+}
+.csc-banner-box {
+    width: 100%; height: 420px; border-radius: 28px; overflow: hidden;
+    box-shadow: 0 25px 50px rgba(37,99,235,0.15); position: relative;
+    border: 4px solid #ffffff; background: #0f172a;
+}
+.csc-banner-box img {
+    width: 100%; height: 100%; object-fit: cover;
+    animation: zoomBanner 15s infinite alternate;
+}
+@keyframes zoomBanner {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+.hero { 
+    min-height: auto; max-width: 1200px; margin: auto; padding: 10px 6% 30px 6%; 
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; 
+}
+.hero-content { display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%; animation: slideLeft 1s ease; }
+.home-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 20px; border: 1px solid #bfdbfe; background: #ffffff; border-radius: 50px; color: #2563eb; font-size: 13px; font-weight: bold; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(37,99,235,0.08); }
+.home-main-title { font-size: clamp(32px, 5vw, 60px); font-weight: 900; color: #1e3a8a; line-height: 1.1; margin-bottom: 15px; letter-spacing: -1px;}
+.gradient-text-home { background: linear-gradient(90deg, #2563eb, #7c3aed); -webkit-background-clip: text; color: transparent; }
+.home-sub-title { font-size: clamp(18px, 2vw, 24px); color: #334155; font-weight: 700; margin-bottom: 15px; }
+.hero p { color: #475569; font-size: 16px; line-height: 1.7; max-width: 750px; margin: 0 auto 30px auto; font-weight: 500;}
+
+.buttons { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;}
+.btn { border: 0; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; gap: 10px; }
+.btn-primary { color: white; background: linear-gradient(135deg, #2563eb, #1d4ed8); box-shadow: 0 10px 25px rgba(37,99,235,0.3); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(37,99,235,0.4); }
+.btn-outline-home { color: #1e3a8a; border: 2px solid #2563eb; background: #ffffff; }
+.btn-outline-home:hover { background: #2563eb; color: #ffffff; transform: translateY(-3px); }
+
+/* HORIZONTAL DASHBOARD */
+.hero-visual { display: flex; justify-content: center; width: 100%; }
+.pro-dashboard { width: 100%; max-width: 1100px; background: #ffffff; border-radius: 28px; padding: 35px 45px; border: 1px solid #e2e8f0; box-shadow: 0 20px 40px rgba(0,0,0,0.06); }
+.dashboard-top { display: flex; justify-content: space-between; margin-bottom: 30px; align-items: center;}
+.pro-dashboard .live { background: #dcfce7; color: #16a34a; border: 1px solid #bbf7d0; padding: 5px 14px; border-radius: 20px; font-weight: 800; font-size: 12px;}
+.pro-dashboard h3 { font-size: 24px; margin-top: 5px; color: #0f172a;}
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.pro-stat { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 22px; transition: 0.3s; text-align: center;}
+.pro-stat:hover { background: #eff6ff; transform: translateY(-4px); border-color: #3b82f6; box-shadow: 0 8px 20px rgba(59,130,246,0.1); }
+.stat-icon { font-size: 32px; margin-bottom: 12px;}
+.pro-stat strong { display: block; font-size: 28px; color: #1e3a8a; font-weight: 900;}
+.pro-stat span { color: #64748b; font-size: 14px; margin-top: 4px; display: block; font-weight: 700;}
+
+/* FLOATING NEWS BAR */
+.news-container { max-width: 1300px; margin: -20px auto 40px auto; padding: 0 5%; position: relative; z-index: 10; }
+.news{ background:#ffffff; border:1px solid #e2e8f0; border-radius: 20px; display:flex; align-items:center; min-height:60px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.06); }
+.news-label{ padding:18px 25px; background:linear-gradient(135deg,#ef4444,#f97316); color:white; font-weight:800; white-space:nowrap; font-size: 14px; position:relative; z-index:2;}
+.news-text{ padding:0 20px; color:#1e293b; overflow:hidden; white-space:nowrap; font-size: 15px; font-weight: 700; width:100%;}
+.news-text span{ display:inline-block; animation:news 25s linear infinite; }
+
+/* =========================================================================
+   WHATSAPP COMMUNITY & GALLERY SECTION
+========================================================================== */
+.community-section { max-width: 1300px; margin: 0 auto 60px auto; padding: 0 5%; }
+.community-container { 
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; 
+    background: #ffffff; border: 1px solid #e2e8f0; border-radius: 32px; 
+    padding: 50px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); align-items: center; 
+}
+.community-text h2 { color: #0f172a; font-size: 32px; margin-bottom: 20px; font-weight: 900; line-height: 1.4;}
+.community-text p { color: #475569; font-size: 17px; line-height: 1.8; margin-bottom: 15px; font-weight: 600;}
+
+.btn-wa-join { 
+    display: inline-flex; align-items: center; justify-content: center; gap:10px;
+    background: linear-gradient(135deg, #22c55e, #16a34a); color: white; 
+    padding: 16px 35px; border-radius: 50px; font-size: 18px; font-weight: 800; 
+    text-decoration: none; margin-top: 15px; box-shadow: 0 10px 25px rgba(34,197,94,0.3); 
+    transition: 0.3s; animation: pulseWa 2s infinite; 
+}
+.btn-wa-join:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(34,197,94,0.4); }
+
+/* Auto-Sliding Gallery */
+.community-gallery { width: 100%; overflow: hidden; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); position: relative; background: #f8fafc; padding: 10px;}
+.gallery-track { display: flex; gap: 15px; width: max-content; animation: scrollGallery 25s linear infinite; }
+.gallery-track:hover { animation-play-state: paused; cursor: pointer; }
+.gallery-track img { width: 350px; height: 350px; object-fit: cover; border-radius: 16px; border: 1px solid #e2e8f0; background: #fff;}
+
+/* SECTIONS BASE */
+.page-padding { padding: 80px 6%; max-width: 1400px; margin: auto; min-height: 70vh;}
+.title{ text-align:center; margin-bottom:50px; }
+.title .mini{ color:#2563eb; font-size:15px; font-weight:900; text-transform:uppercase; letter-spacing:2.5px; margin-bottom: 12px; display: inline-block;}
+.title h2{ color:#0f172a; font-size:40px; margin:10px 0; font-weight: 900; }
+.title p{ color:#64748b; font-size: 17px; font-weight: 600;}
+
+/* =========================================================================
+   🔥 3D HOVER & CLICK ANIMATION FOR SERVICE CARDS
+========================================================================== */
+.grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:25px; }
+.card{ 
+    background:#ffffff; border:1px solid #e2e8f0; border-radius:24px; padding:35px 30px; 
+    transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position:relative; overflow:hidden; 
+    cursor:pointer; box-shadow: 0 10px 25px rgba(0,0,0,0.04); text-align: left; z-index: 1;
+}
+.card::before { 
+    content: ""; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; 
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%); 
+    transform: skewX(-25deg); transition: all 0.6s ease; z-index: -1; 
+}
+.card:hover::before { left: 125%; }
+.card:hover{ 
+    transform:translateY(-15px) scale(1.03); 
+    box-shadow: 0 30px 60px rgba(37,99,235,0.15); 
+    border-bottom: 5px solid #2563eb; z-index: 2;
+}
+.card:active { 
+    transform: translateY(-5px) scale(0.98); 
+    box-shadow: 0 10px 20px rgba(37,99,235,0.1); 
+    transition: all 0.1s ease;
+}
+.icon{ 
+    width:70px; height:70px; border-radius:20px; display:flex; align-items:center; justify-content:center; 
+    font-size:35px; background:linear-gradient(135deg,#eff6ff,#f3e8ff); margin-bottom:25px; 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+.card:hover .icon { 
+    transform: scale(1.15) rotate(10deg); 
+    box-shadow: 0 10px 20px rgba(37,99,235,0.15); 
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe); 
+}
+.card h3{ color:#0f172a; margin-bottom:12px; font-size: 22px; font-weight: 800; transition: 0.3s;}
+.card:hover h3 { color: #2563eb; }
+.card p{ color:#475569; font-size:15px; line-height:1.7; font-weight: 600;}
+.card-link{ 
+    display:inline-block; margin-top:20px; color:#2563eb; font-size:15px; 
+    font-weight:800; pointer-events:none; transition: 0.3s;
+}
+.card:hover .card-link { transform: translateX(8px); color: #1d4ed8; }
+
+/* SMART SEARCH */
+.search-area{ max-width:850px; margin:auto; margin-bottom: 60px;}
+.search{ display:flex; background:#ffffff; border:1px solid #e2e8f0; border-radius:20px; padding:10px; box-shadow: 0 15px 40px rgba(0,0,0,0.04);}
+.search input{ flex:1; background:none; border:0; outline:0; color:#0f172a; padding:18px 25px; font-size:18px; font-weight: 600;}
+.search input::placeholder{ color:#94a3b8; font-weight: 500;}
+.search button{ border:0; border-radius:15px; padding:0 40px; color:white; font-size: 16px; font-weight:800; background:linear-gradient(135deg,#2563eb,#1d4ed8); cursor:pointer; transition: 0.3s; box-shadow: 0 10px 20px rgba(37,99,235,0.3);}
+.search button:hover { transform: translateY(-3px); box-shadow: 0 15px 25px rgba(37,99,235,0.4);}
+#searchResult { margin-top: 30px; }
+.no-result { text-align: center; color: #ef4444; font-size: 18px; font-weight: bold; margin-top: 20px; padding: 20px; background: #fef2f2; border-radius: 12px; border: 1px solid #fecaca;}
+
+/* FILTERS & UPDATES */
+.filters{ display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-bottom:40px; }
+.filter{ padding:12px 28px; background:#ffffff; border:1px solid #e2e8f0; box-shadow: 0 5px 15px rgba(0,0,0,0.02); border-radius:50px; color:#475569; cursor:pointer; font-weight: 700; font-size: 15px; transition: 0.3s;}
+.filter.active, .filter:hover{ background:linear-gradient(135deg,#2563eb,#1d4ed8); color:white; border-color:transparent; transform: translateY(-3px); box-shadow: 0 10px 25px rgba(37,99,235,0.3);}
+.update { border-bottom: none !important; border-left: 5px solid #2563eb; }
+.update-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+.new{ background:#dcfce7; color:#16a34a; padding:6px 12px; border-radius:20px; font-size:11px; font-weight:900; letter-spacing: 1px; }
+.date{ color:#64748b; font-size:13px; font-weight: 700;}
+
+/* ABOUT US SECTION */
+.about-container { 
+    display: grid; grid-template-columns: 1fr 1fr; gap: 50px; 
+    align-items: center; max-width: 1200px; margin: auto; 
+}
+.about-image { 
+    position: relative; border-radius: 30px; overflow: hidden; 
+    box-shadow: 0 20px 40px rgba(37,99,235,0.15); 
+}
+.about-image img { 
+    width: 100%; height: 100%; object-fit: cover; display: block; 
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+.about-image:hover img { transform: scale(1.08); }
+.about-content { text-align: left; }
+.about-content h2 { 
+    font-size: 38px; color: #1e3a8a; margin-bottom: 20px; 
+    font-weight: 900; line-height: 1.2; letter-spacing: -1px;
+}
+.about-content p { 
+    color: #475569; font-size: 17px; line-height: 1.8; 
+    margin-bottom: 15px; font-weight: 500; 
+}
+.about-features { display: flex; gap: 20px; margin-top: 30px; }
+.about-feature-box { 
+    background: #ffffff; border: 1px solid #e2e8f0; padding: 25px; 
+    border-radius: 20px; flex: 1; transition: 0.3s; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+}
+.about-feature-box:hover { 
+    transform: translateY(-8px); background: #eff6ff; 
+    border-color: #bfdbfe; box-shadow: 0 15px 30px rgba(37,99,235,0.15); 
+}
+.about-feature-box h4 { 
+    color: #2563eb; font-size: 18px; margin-bottom: 10px; 
+    font-weight: 900; display: flex; align-items: center; gap: 8px;
+}
+.about-feature-box p { font-size: 14px; margin-bottom: 0; line-height: 1.6;}
+
+/* CONTACT PAGE & SOCIAL MEDIA BUTTONS */
+.contact-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:30px; margin-top: 30px;}
+.contact-card{ padding:45px 30px; border-radius:24px; background:#ffffff; border:1px solid #e2e8f0; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,.04); transition: 0.4s;}
+.contact-card:hover { transform: translateY(-10px); box-shadow:0 20px 40px rgba(37,99,235,.12); border-bottom: 4px solid #06b6d4;}
+.contact-card .big{ font-size:50px; margin-bottom:20px; }
+.contact-card h3{ color:#0f172a; font-size: 24px; font-weight: 900;}
+.contact-card p{ color:#64748b; margin-top:10px; font-weight: 600; font-size: 16px;}
+
+.social-container { display: flex; justify-content: center; gap: 20px; margin-top: 25px; flex-wrap: wrap; }
+.social-btn { display: flex; align-items: center; gap: 10px; padding: 16px 35px; border-radius: 50px; font-weight: 800; font-size: 16px; color: white; text-decoration: none; transition: 0.3s; }
+.btn-insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); box-shadow: 0 10px 25px rgba(220, 39, 67, 0.3); }
+.btn-insta:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(220, 39, 67, 0.4); }
+.btn-yt { background: #ff0000; box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3); }
+.btn-yt:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(255, 0, 0, 0.4); }
+.btn-fb { background: #1877f2; box-shadow: 0 10px 25px rgba(24, 119, 242, 0.3); }
+.btn-fb:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(24, 119, 242, 0.4); }
+
+/* CONTACT FOOTER BANNER */
+.contact-footer-banner {
+    display: flex; align-items: center; gap: 40px; margin-top: 60px;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb); border-radius: 30px;
+    padding: 40px; color: white; box-shadow: 0 20px 40px rgba(37,99,235,0.2);
+}
+.contact-footer-text { flex: 1; text-align: left; }
+.contact-footer-text h3 { font-size: 32px; font-weight: 900; margin-bottom: 15px; line-height: 1.3;}
+.contact-footer-text p { font-size: 16px; color: #bfdbfe; line-height: 1.8; margin-bottom: 25px;}
+.contact-footer-images { flex: 1; display: flex; gap: 15px; }
+.contact-footer-images img { 
+    width: 50%; height: 220px; object-fit: cover; border-radius: 20px; 
+    border: 3px solid rgba(255,255,255,0.2); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+.contact-footer-images img:hover { transform: translateY(-10px) scale(1.05); border-color: #ffffff; box-shadow: 0 15px 30px rgba(0,0,0,0.3);}
+
+/* FOOTER */
+footer{ background:#020617; text-align:center; padding:60px 20px; color:white; }
+footer h3{ margin-bottom:15px; font-size: 26px; font-weight: 900; letter-spacing: 1px;}
+footer p{ color:#94a3b8; font-size:16px; margin:10px; font-weight: 500;}
+.whatsapp{ position:fixed; right:30px; bottom:30px; width:70px; height:70px; border-radius:50%; background:#22c55e; color:white; display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:35px; box-shadow:0 15px 35px rgba(34,197,94,.5); z-index:2000; animation:pulse 2s infinite; }
+
+/* =========================================================================
+   MODALS BASE
+========================================================================== */
+.modal-overlay { 
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+    background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(5px); 
+    z-index: 9999; align-items: center; justify-content: center; padding: 20px; 
+}
+.modal-overlay.active { display: flex; animation: fadeInModal 0.3s forwards; }
+@keyframes fadeInModal { from { opacity: 0; } to { opacity: 1; } }
+
+.modal-box { background: #ffffff; color: #0f172a; border: none; box-shadow: 0 40px 100px rgba(0,0,0,0.2); width: 100%; max-width: 520px; border-radius: 32px; padding: 35px; max-height: 90vh; overflow-y: auto; position: relative;}
+.close-btn { background: #fee2e2; border: none; font-size: 24px; color: #ef4444; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.3s; box-shadow: 0 5px 15px rgba(239,68,68,0.2); flex-shrink: 0;}
+.close-btn:hover { background: #ef4444; color: white; transform: rotate(90deg); }
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px; }
+.modal-header h3 { font-size: 24px; display: flex; align-items: center; gap: 12px; font-weight: 900;}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: slideLeft 0.4s ease; }
+.wa-btn-large { display: flex; justify-content: center; align-items: center; gap: 10px; width: 100%; padding: 18px; margin-top: 30px; border-radius: 16px; border: none; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; font-size: 18px; font-weight: 800; cursor: pointer; transition: 0.3s; box-shadow: 0 10px 25px rgba(34,197,94,0.3); text-align: center; }
+.wa-btn-large:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(34,197,94,0.4); }
+
+/* ALL ANIMATIONS FOR MODALS */
+@keyframes popZoom { from { transform: scale(0.7) translateY(40px); opacity: 0; } to { transform: scale(1) translateY(0); opacity: 1; } }
+@keyframes rotateFlip { from { transform: perspective(1000px) rotateX(-90deg); opacity: 0; } to { transform: perspective(1000px) rotateX(0deg); opacity: 1; } }
+@keyframes slideTilt { from { transform: scale(0.3) rotate(-15deg); opacity: 0; } to { transform: scale(1) rotate(0deg); opacity: 1; } }
+@keyframes sideFly { from { transform: translateX(150px) rotateY(45deg) scale(0.8); opacity: 0; } to { transform: translateX(0) rotateY(0deg) scale(1); opacity: 1; } }
+@keyframes dropDown { from { transform: perspective(1000px) rotateX(-60deg) translateY(-50px); opacity: 0; } to { transform: perspective(1000px) rotateX(0deg) translateY(0); opacity: 1; } }
+@keyframes heartBeatPop { 0% { transform: scale(0.5) translateY(50px); opacity: 0; } 70% { transform: scale(1.05) translateY(-10px); opacity: 1; } 100% { transform: scale(1) translateY(0); opacity: 1; } }
+@keyframes slideLeft{ from{ opacity:0; transform:translateX(-40px); } to{ opacity:1; transform:translateX(0); } }
+@keyframes flipInY { from { transform: perspective(400px) rotateY(90deg); opacity: 0; } to { transform: perspective(400px) rotateY(0deg); opacity: 1; } }
+@keyframes zoomInUp { from { opacity: 0; transform: scale(0.1) translateY(200px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+@keyframes slideInRight { from { transform: translateX(150px) scale(0.9); opacity: 0; } to { transform: translateX(0) scale(1); opacity: 1; } }
+@keyframes bounceIn { 0% { transform: scale(0.3); opacity: 0; } 50% { transform: scale(1.05); opacity: 1; } 70% { transform: scale(0.9); } 100% { transform: scale(1); } }
+@keyframes slideUpFade { from { opacity: 0; transform: translateY(150px) scale(0.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes dropBounce { 0% { transform: translateY(-200px); opacity: 0; } 60% { transform: translateY(20px); opacity: 1; } 100% { transform: translateY(0); } }
+@keyframes flipInX { from { transform: perspective(400px) rotateX(90deg); opacity: 0; } to { transform: perspective(400px) rotateX(0deg); opacity: 1; } }
+@keyframes swingIn { 0% { transform: perspective(600px) rotateX(-90deg); opacity: 0; } 40% { transform: perspective(600px) rotateX(20deg); } 60% { transform: perspective(600px) rotateX(-10deg); opacity: 1; } 80% { transform: perspective(600px) rotateX(5deg); } 100% { transform: perspective(600px) rotateX(0deg); opacity: 1; } }
+@keyframes foldIn { 0% { transform: perspective(800px) rotateX(-90deg); opacity: 0; transform-origin: top; } 100% { transform: perspective(800px) rotateX(0deg); opacity: 1; transform-origin: top; } }
+@keyframes zoomInDownSimple { from { opacity: 0; transform: scale(0.5) translateY(-100px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+@keyframes slideInLeftSimple { from { opacity: 0; transform: translateX(-150px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes rollInSimple { from { opacity: 0; transform: translateX(-100%) rotate(-120deg); } to { opacity: 1; transform: translateX(0px) rotate(0deg); } }
+@keyframes spinInSimple { from { opacity: 0; transform: rotate(360deg) scale(0.1); } to { opacity: 1; transform: rotate(0deg) scale(1); } }
+@keyframes popInBottomSimple { from { opacity: 0; transform: translateY(200px) scale(0.5); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes flipInTopSimple { from { transform: perspective(400px) rotateX(-90deg); opacity: 0; transform-origin: top; } to { transform: perspective(400px) rotateX(0deg); opacity: 1; transform-origin: top; } }
+@keyframes pulseWa { 0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); } 70% { box-shadow: 0 0 0 15px rgba(34,197,94,0); } 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); } }
+@keyframes scrollGallery { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-50% - 7.5px)); } }
+
+
+/* INDIVIDUAL MODALS */
+.modal-box-pan { border: 2px solid #bfdbfe; animation: popZoom 0.4s ease forwards; }
+.modal-tabs-pan { display: flex; gap: 10px; margin-bottom: 25px; background: #f1f5f9; padding: 6px; border-radius: 16px; flex-wrap: wrap;}
+.tab-btn-pan { flex: 1; padding: 14px 10px; border: none; background: transparent; color: #64748b; border-radius: 12px; cursor: pointer; font-weight: 800; font-size: 14px; transition: 0.3s; white-space: nowrap; }
+.tab-btn-pan.active { background: linear-gradient(135deg, #2563eb, #7c3aed); color: white; box-shadow: 0 5px 15px rgba(37,99,235,0.2); }
+.doc-list-pan { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-pan li { margin-bottom: 12px; font-size: 16px; color: #334155; display:flex; align-items:center; gap:12px; background: #f8fafc; padding: 12px 18px; border-radius: 12px; border: 1px solid #e2e8f0; font-weight: 700;}
+
+.modal-box-aadhaar { border: 2px solid #fed7aa; animation: rotateFlip 0.5s ease forwards; }
+.modal-tabs-aadhaar { display: flex; gap: 10px; margin-bottom: 25px; background: #fff7ed; padding: 6px; border-radius: 16px; flex-wrap: wrap;}
+.tab-btn-aadhaar { flex: 1; padding: 14px 10px; border: none; background: transparent; color: #c2410c; border-radius: 12px; cursor: pointer; font-weight: 800; font-size: 14px; transition: 0.3s; white-space: nowrap; }
+.tab-btn-aadhaar.active { background: linear-gradient(135deg, #f97316, #e11d48); color: white; box-shadow: 0 5px 15px rgba(249,115,22,0.2); }
+.doc-list-aadhaar { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-aadhaar li { margin-bottom: 12px; font-size: 16px; color: #9a3412; display:flex; align-items:center; gap:12px; background: #fffaf5; padding: 12px 18px; border-radius: 12px; border: 1px solid #ffedd5; font-weight: 700;}
+
+.modal-box-voter { border: 2px solid #a78bfa; max-width: 550px; animation: foldIn 0.6s ease forwards; transform-origin: top; }
+.modal-tabs-voter { display: flex; gap: 10px; margin-bottom: 25px; background: #f5f3ff; padding: 6px; border-radius: 16px; flex-wrap: wrap;}
+.tab-btn-voter { flex: 1; padding: 14px 10px; border: none; background: transparent; color: #6d28d9; border-radius: 12px; cursor: pointer; font-weight: 800; font-size: 14px; transition: 0.3s; white-space: nowrap; }
+.tab-btn-voter.active { background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: white; box-shadow: 0 5px 15px rgba(139,92,246,0.2); }
+.doc-list-voter { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-voter li { margin-bottom: 12px; font-size: 15px; color: #4c1d95; display:flex; align-items:center; gap:12px; background: #faf5ff; padding: 12px 18px; border-radius: 12px; border: 1px solid #ede9fe; font-weight: 700; transition:0.3s;}
+.doc-list-voter li:hover { background: #ede9fe; transform: translateX(5px); border-color: #c4b5fd;}
+
+.modal-box-eshram { border: 2px solid #a7f3d0; max-width: 480px; animation: slideTilt 0.4s ease forwards; }
+.doc-list-eshram { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-eshram li { margin-bottom: 12px; font-size: 16px; color: #065f46; display:flex; align-items:center; gap:12px; background: #ecfdf5; padding: 12px 18px; border-radius: 12px; border: 1px solid #d1fae5; font-weight: 700; transition:0.3s;}
+.doc-list-eshram li:hover { background: #d1fae5; transform: translateX(5px);}
+
+.modal-box-ayushman { border: 2px solid #fbcfe8; max-width: 480px; animation: sideFly 0.5s ease forwards; }
+.doc-list-ayushman { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-ayushman li { margin-bottom: 12px; font-size: 16px; color: #9d174d; display:flex; align-items:center; gap:12px; background: #fdf2f8; padding: 12px 18px; border-radius: 12px; border: 1px solid #fce7f3; font-weight: 700; transition:0.3s;}
+.doc-list-ayushman li:hover { background: #fce7f3; transform: translateX(5px);}
+
+.modal-box-avak { border: 2px solid #86efac; max-width: 480px; animation: flipInY 0.5s ease forwards; }
+.doc-list-avak { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-avak li { margin-bottom: 12px; font-size: 16px; color: #166534; display:flex; align-items:center; gap:12px; background: #f0fdf4; padding: 12px 18px; border-radius: 12px; border: 1px solid #bbf7d0; font-weight: 700; transition:0.3s;}
+.doc-list-avak li:hover { background: #dcfce7; transform: translateX(5px); border-color: #86efac;}
+
+.modal-box-noncreamy { border: 2px solid #fde047; max-width: 500px; animation: zoomInUp 0.5s ease forwards; }
+.doc-list-ncl { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-ncl li { margin-bottom: 12px; font-size: 15px; color: #854d0e; display:flex; align-items:center; gap:12px; background: #fefce8; padding: 12px 18px; border-radius: 12px; border: 1px solid #fef08a; font-weight: 700; transition:0.3s;}
+.doc-list-ncl li:hover { background: #fef9c3; transform: translateX(5px); border-color: #fde047;}
+
+.modal-box-jati { border: 2px solid #c4b5fd; max-width: 480px; animation: slideInRight 0.4s ease forwards; }
+.doc-list-jati { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-jati li { margin-bottom: 12px; font-size: 15px; color: #5b21b6; display:flex; align-items:center; gap:12px; background: #f5f3ff; padding: 12px 18px; border-radius: 12px; border: 1px solid #ddd6fe; font-weight: 700; transition:0.3s;}
+.doc-list-jati li:hover { background: #ede9fe; transform: translateX(5px); border-color: #c4b5fd;}
+
+.modal-box-ews { border: 2px solid #fca5a5; max-width: 500px; animation: bounceIn 0.5s ease forwards; }
+.doc-list-ews { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-ews li { margin-bottom: 12px; font-size: 15px; color: #991b1b; display:flex; align-items:center; gap:12px; background: #fef2f2; padding: 12px 18px; border-radius: 12px; border: 1px solid #fecaca; font-weight: 700; transition:0.3s;}
+.doc-list-ews li:hover { background: #fee2e2; transform: translateX(5px); border-color: #fca5a5;}
+
+.modal-box-pf { border: 2px solid #7dd3fc; max-width: 480px; animation: slideUpFade 0.5s ease forwards; }
+.doc-list-pf { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-pf li { margin-bottom: 12px; font-size: 15px; color: #0284c7; display:flex; align-items:center; gap:12px; background: #f0f9ff; padding: 12px 18px; border-radius: 12px; border: 1px solid #bae6fd; font-weight: 700; transition:0.3s;}
+.doc-list-pf li:hover { background: #e0f2fe; transform: translateX(5px); border-color: #7dd3fc;}
+
+.modal-box-marriage { border: 2px solid #f9a8d4; max-width: 500px; animation: dropBounce 0.6s ease forwards; }
+.doc-list-marriage { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-marriage li { margin-bottom: 12px; font-size: 15px; color: #be185d; display:flex; align-items:center; gap:12px; background: #fdf2f8; padding: 12px 18px; border-radius: 12px; border: 1px solid #fbcfe8; font-weight: 700; transition:0.3s;}
+.doc-list-marriage li:hover { background: #fce7f3; transform: translateX(5px); border-color: #f9a8d4;}
+
+.modal-box-police { border: 2px solid #94a3b8; max-width: 480px; animation: flipInX 0.6s ease forwards; }
+.doc-list-police { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-police li { margin-bottom: 12px; font-size: 15px; color: #334155; display:flex; align-items:center; gap:12px; background: #f8fafc; padding: 12px 18px; border-radius: 12px; border: 1px solid #e2e8f0; font-weight: 700; transition:0.3s;}
+.doc-list-police li:hover { background: #f1f5f9; transform: translateX(5px); border-color: #cbd5e1;}
+
+.modal-box-ration { border: 2px solid #67e8f9; max-width: 550px; animation: swingIn 0.6s ease forwards; }
+.modal-tabs-ration { display: flex; gap: 10px; margin-bottom: 25px; background: #ecfeff; padding: 6px; border-radius: 16px; flex-wrap: wrap;}
+.tab-btn-ration { flex: 1; padding: 14px 10px; border: none; background: transparent; color: #0891b2; border-radius: 12px; cursor: pointer; font-weight: 800; font-size: 14px; transition: 0.3s; white-space: nowrap; }
+.tab-btn-ration.active { background: linear-gradient(135deg, #06b6d4, #0891b2); color: white; box-shadow: 0 5px 15px rgba(6,182,212,0.2); }
+.doc-list-ration { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-ration li { margin-bottom: 12px; font-size: 15px; color: #155e75; display:flex; align-items:center; gap:12px; background: #f0fdfa; padding: 12px 18px; border-radius: 12px; border: 1px solid #ccfbf1; font-weight: 700; transition:0.3s;}
+.doc-list-ration li:hover { background: #ccfbf1; transform: translateX(5px); border-color: #5eead4;}
+
+.modal-box-resume { border: 2px solid #5eead4; max-width: 480px; animation: zoomInDownSimple 0.6s ease forwards; }
+.doc-list-resume { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-resume li { margin-bottom: 12px; font-size: 15px; color: #0f766e; display:flex; align-items:center; gap:12px; background: #f0fdfa; padding: 12px 18px; border-radius: 12px; border: 1px solid #ccfbf1; font-weight: 700; transition:0.3s;}
+.doc-list-resume li:hover { background: #ccfbf1; transform: translateX(5px); border-color: #5eead4;}
+
+.modal-box-udhyog { border: 2px solid #fcd34d; max-width: 480px; animation: slideInLeftSimple 0.5s ease forwards; }
+.doc-list-udhyog { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-udhyog li { margin-bottom: 12px; font-size: 15px; color: #b45309; display:flex; align-items:center; gap:12px; background: #fffbeb; padding: 12px 18px; border-radius: 12px; border: 1px solid #fef3c7; font-weight: 700; transition:0.3s;}
+.doc-list-udhyog li:hover { background: #fef3c7; transform: translateX(5px); border-color: #fcd34d;}
+
+.modal-box-712 { border: 2px solid #6ee7b7; max-width: 480px; animation: rollInSimple 0.6s ease forwards; }
+.doc-list-712 { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-712 li { margin-bottom: 12px; font-size: 15px; color: #047857; display:flex; align-items:center; gap:12px; background: #ecfdf5; padding: 12px 18px; border-radius: 12px; border: 1px solid #d1fae5; font-weight: 700; transition:0.3s;}
+.doc-list-712 li:hover { background: #d1fae5; transform: translateX(5px); border-color: #6ee7b7;}
+
+.modal-box-vahali { border: 2px solid #fda4af; max-width: 520px; animation: spinInSimple 0.6s ease forwards; }
+.doc-list-vahali { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-vahali li { margin-bottom: 12px; font-size: 15px; color: #be123c; display:flex; align-items:center; gap:12px; background: #fff1f2; padding: 12px 18px; border-radius: 12px; border: 1px solid #ffe4e6; font-weight: 700; transition:0.3s;}
+.doc-list-vahali li:hover { background: #ffe4e6; transform: translateX(5px); border-color: #fda4af;}
+
+.modal-box-passport { border: 2px solid #93c5fd; max-width: 480px; animation: popInBottomSimple 0.5s ease forwards; }
+.doc-list-passport { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-passport li { margin-bottom: 12px; font-size: 15px; color: #1d4ed8; display:flex; align-items:center; gap:12px; background: #eff6ff; padding: 12px 18px; border-radius: 12px; border: 1px solid #dbeafe; font-weight: 700; transition:0.3s;}
+.doc-list-passport li:hover { background: #dbeafe; transform: translateX(5px); border-color: #93c5fd;}
+
+.modal-box-vimo { border: 2px solid #c4b5fd; max-width: 480px; animation: flipInTopSimple 0.6s ease forwards; transform-origin: top;}
+.doc-list-vimo { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-vimo li { margin-bottom: 12px; font-size: 15px; color: #5b21b6; display:flex; align-items:center; gap:12px; background: #f5f3ff; padding: 12px 18px; border-radius: 12px; border: 1px solid #ede9fe; font-weight: 700; transition:0.3s;}
+.doc-list-vimo li:hover { background: #ede9fe; transform: translateX(5px); border-color: #c4b5fd;}
+
+
+.modal-box-jobs { max-width: 950px; border: 2px solid #bfdbfe; animation: popZoom 0.4s ease forwards; }
+.sarkari-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 25px; }
+@media(max-width: 850px) { .sarkari-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(max-width: 500px) { .sarkari-grid { grid-template-columns: 1fr; } }
+.sarkari-box { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 25px 15px; border-radius: 20px; text-decoration: none; color: #ffffff !important; font-weight: 800; font-size: 17px; text-align: center; line-height: 1.5; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border: 2px solid rgba(255,255,255,0.2); position: relative; overflow: hidden; cursor: pointer; transition: all 0.3s; }
+.sarkari-box small { font-size: 14px; font-weight: 700; margin-top: 8px; opacity: 0.95; display:block;}
+.sarkari-box:hover { transform: translateY(-8px) scale(1.03); box-shadow: 0 20px 40px rgba(0,0,0,0.2); border-color: #ffffff; z-index: 2; }
+.sb-red { background: linear-gradient(135deg, #ef4444, #b91c1c); }
+.sb-orange { background: linear-gradient(135deg, #f97316, #c2410c); }
+.sb-pink { background: linear-gradient(135deg, #d946ef, #be185d); }
+.sb-darkblue { background: linear-gradient(135deg, #1e3a8a, #172554); }
+.sb-olive { background: linear-gradient(135deg, #a1a11a, #7a7a0a); }
+.sb-blue { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+.sb-maroon { background: linear-gradient(135deg, #991b1b, #7f1d1d); }
+.sb-green { background: linear-gradient(135deg, #22c55e, #15803d); }
+
+.modal-box-gds { border: 2px solid #fecaca; max-width: 480px; animation: popZoom 0.4s ease forwards; }
+.date-container { display: flex; gap: 15px; margin-top:15px; }
+.date-box { flex: 1; padding: 15px; border-radius: 16px; text-align: center; border: 1px solid #e2e8f0; }
+.date-box.start-date { background: #f0fdf4; border-color: #bbf7d0; }
+.date-box.end-date { background: #fef2f2; border-color: #fecaca; }
+.date-box span { display: block; font-size: 13px; color: #64748b; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; font-weight: 800;}
+.date-box.start-date strong { color: #16a34a; font-size: 18px; font-weight: 900;}
+.date-box.end-date strong { color: #dc2626; font-size: 18px; font-weight: 900;}
+
+.modal-box-admission { border: 2px solid #e9d5ff; max-width: 560px; animation: popZoom 0.4s ease forwards;}
+.modal-tabs-admission { display: flex; gap: 10px; margin-bottom: 25px; background: #f3e8ff; padding: 6px; border-radius: 16px; flex-wrap: wrap;}
+.tab-btn-admission { flex: 1; padding: 14px 10px; border: none; background: transparent; color: #7c3aed; border-radius: 12px; cursor: pointer; font-weight: 800; font-size: 14px; transition: 0.3s; white-space: nowrap; }
+.tab-btn-admission.active { background: #ffffff; color: #7c3aed; box-shadow: 0 5px 15px rgba(124,58,237,0.2); }
+.admin-card-badge { padding: 16px; border-radius: 16px; color: white; margin-bottom: 20px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.admin-card-badge h4 { font-size: 20px; font-weight: 900; }
+.admin-card-badge p { font-size: 13px; font-weight: 600; opacity: 0.9; margin-top: 4px; }
+.doc-list-admission { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-admission li { margin-bottom: 12px; font-size: 16px; color: #4c1d95; display:flex; align-items:center; gap:12px; background: #faf5ff; padding: 12px 18px; border-radius: 12px; border: 1px solid #e9d5ff; font-weight: 700; transition:0.3s;}
+.doc-list-admission li:hover { background: #f3e8ff; transform: translateX(5px); border-color: #d8b4fe;}
+
+.modal-box-scholarship { border: 2px solid #bae6fd; max-width: 560px; animation: dropDown 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.modal-tabs-scholarship { display: flex; gap: 10px; margin-bottom: 25px; background: #e0f2fe; padding: 6px; border-radius: 16px; flex-wrap: wrap;}
+.tab-btn-scholarship { flex: 1; padding: 14px 10px; border: none; background: transparent; color: #0284c7; border-radius: 12px; cursor: pointer; font-weight: 800; font-size: 14px; transition: 0.3s; white-space: nowrap; }
+.tab-btn-scholarship.active { background: #ffffff; color: #0284c7; box-shadow: 0 5px 15px rgba(2,132,199,0.15); }
+.doc-list-scholarship { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-scholarship li { margin-bottom: 12px; font-size: 16px; color: #0369a1; display:flex; align-items:center; gap:12px; background: #f0f9ff; padding: 12px 18px; border-radius: 12px; border: 1px solid #e0f2fe; font-weight: 700; transition:0.3s;}
+.doc-list-scholarship li:hover { background: #e0f2fe; transform: translateY(-3px); border-color: #bae6fd; box-shadow: 0 5px 10px rgba(2,132,199,0.1);}
+
+.modal-box-kuvarbai { border: 2px solid #fecdd3; max-width: 520px; animation: heartBeatPop 0.5s ease-out forwards; }
+.modal-header-kuvarbai h3 { color: #e11d48; }
+.doc-list-kuvarbai { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-kuvarbai li { margin-bottom: 12px; font-size: 16px; color: #9f1239; display:flex; align-items:center; gap:12px; background: #fff1f2; padding: 12px 18px; border-radius: 12px; border: 1px solid #ffe4e6; font-weight: 700; transition:0.3s;}
+.doc-list-kuvarbai li:hover { background: #ffe4e6; transform: translateX(5px); border-color: #fecdd3; box-shadow: 0 5px 10px rgba(225,29,72,0.1);}
+.kuvarbai-btn { background: linear-gradient(135deg, #f43f5e, #e11d48); box-shadow: 0 10px 25px rgba(225,29,72,0.3); }
+.kuvarbai-btn:hover { box-shadow: 0 15px 30px rgba(225,29,72,0.4); transform: translateY(-4px); }
+
+.modal-box-abha { border: 2px solid #99f6e4; max-width: 480px; animation: slideTilt 0.4s forwards; }
+.doc-list-abha { list-style: none; margin: 15px 0; padding-left: 5px; }
+.doc-list-abha li { margin-bottom: 12px; font-size: 16px; color: #0f766e; display:flex; align-items:center; gap:12px; background: #f0fdf4; padding: 12px 18px; border-radius: 12px; border: 1px solid #bbf7d0; font-weight: 700; transition:0.3s;}
+.doc-list-abha li:hover { background: #dcfce7; transform: translateX(5px); border-color: #86efac;}
+.abha-btn { background: linear-gradient(135deg, #14b8a6, #0f766e); box-shadow: 0 10px 25px rgba(13,148,136,0.3); }
+.abha-btn:hover { box-shadow: 0 15px 30px rgba(13,148,136,0.4); transform: translateY(-4px); }
+
+/* MOBILE RESPONSIVE */
+@media(max-width:1000px){ 
+    .grid{ grid-template-columns:repeat(2,1fr); } 
+    .about-container { grid-template-columns: 1fr; }
+    .hero{ padding: 20px 5% 30px 5%;} 
+    .buttons{ justify-content:center; } 
+    .stat-grid { grid-template-columns: repeat(2, 1fr); } 
+    .community-container { grid-template-columns: 1fr; padding: 30px; text-align: center; }
+    .btn-wa-join { width: 100%; }
+    .csc-banner-box { height: 280px; }
+    .contact-footer-banner { flex-direction: column; text-align: center; padding: 30px; }
+    .contact-footer-text { text-align: center; }
+    .contact-footer-images { width: 100%; }
+}
+@media(max-width:700px){ 
+    .navbar{ min-height:70px; } 
+    nav{ display:none; position:absolute; top:70px; left:0; right:0; background:#ffffff; padding:25px; flex-direction:column; border-bottom:1px solid #e2e8f0; box-shadow: 0 10px 20px rgba(0,0,0,0.05);} 
+    nav.show{ display:flex; } 
+    .menu-btn{ display:block; color: #0f172a;} 
+    .csc-banner-box { height: 200px; } 
+    .pro-dashboard{ width:100%; padding: 25px;} 
+    .stat-grid { gap: 15px;} .pro-stat { padding: 18px;} 
+    .grid, .contact-grid{ grid-template-columns:1fr; } 
+    .page-padding{ padding:60px 5%; } .news-label{ padding:14px 18px; } 
+    .about-features { flex-direction: column; } 
+    .social-btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PRELOADER INTRO SCREEN -->
+<div id="vfx-loader">
+    <div class="loader-content">
+        <div class="glow-ring"></div>
+        <img src="logo.jpg" alt="Makwana Group Logo" class="loader-logo">
+        <h1 class="loader-title">MAKWANA GROUP<br>OF SERVICES</h1>
+        <p class="loader-subtitle">DIGITAL PORTAL</p>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header>
+<div class="navbar">
+<div class="logo">
+<img src="logo.jpg" alt="Makwana Group Logo" class="real-logo">
+<div>
+<h1 class="logo-text">MAKWANA GROUP <span class="logo-highlight">OF SERVICES</span></h1>
+<small>DIGITAL PORTAL</small>
+</div>
+</div>
+<!-- NAVIGATION MENU -->
+<nav id="nav">
+<a href="#" onclick="showSection('homePage', this)" class="nav-link active">Home</a>
+<a href="#" onclick="showSection('servicesPage', this)" class="nav-link">Services</a>
+<a href="#" onclick="showSection('updatesPage', this)" class="nav-link">Updates & Jobs</a>
+<a href="#" onclick="showSection('aboutPage', this)" class="nav-link">About</a>
+<a href="#" onclick="showSection('contactPage', this)" class="nav-link">Contact</a>
+</nav>
+<div style="display:flex;gap:10px;align-items:center;">
+<button class="menu-btn" onclick="menuToggle()">☰</button>
+</div>
+</div>
+</header>
+
+<!-- MAIN APP CONTAINER -->
+<main id="main-content">
+
+    <!-- ================= 1. HOME PAGE ================= -->
+    <div id="homePage" class="page-section active">
+        <div class="home-wrapper">
+            
+            <!-- TOP BANNER (NO FACES, CLEAN MODERN OFFICE SETUP) -->
+            <div class="csc-hero-banner">
+                <div class="csc-banner-box">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1400&auto=format&fit=crop" alt="Makwana Group Office Setup">
+                </div>
+            </div>
+
+            <!-- TEXT & BUTTONS BELOW THE BANNER -->
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="home-badge">🟢 DIGITAL SERVICE PORTAL • ONLINE</div>
+                    <h1 class="home-main-title">MAKWANA GROUP OF SERVICES</h1>
+                    <h2 class="home-sub-title">તમારી દરેક <span class="gradient-text-home">Digital</span> જરૂરિયાત એક જ જગ્યાએ</h2>
+                    <p>Welcome to our official digital portal. અહીં તમને Government Forms, Jobs, Admission, Scholarship, Yojana અને Latest Updates સરળતાથી મળશે.</p>
+                    <div class="buttons">
+                        <a href="#" onclick="showSection('updatesPage')" class="btn btn-primary">📢 Latest Updates</a>
+                        <a href="#" onclick="showSection('servicesPage')" class="btn btn-outline-home">⚡ Explore Services</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="pro-dashboard">
+                        <div class="dashboard-top">
+                            <div><div style="color:#64748b;font-size:12px; font-weight: 800; letter-spacing: 1px; margin-bottom: 5px;">WELCOME</div><h3>Digital Dashboard</h3></div>
+                            <div class="live">● LIVE</div>
+                        </div>
+                        <div class="stat-grid">
+                            <div class="pro-stat"><div class="stat-icon">📄</div><strong>50+</strong><span>Online Forms</span></div>
+                            <div class="pro-stat"><div class="stat-icon">💼</div><strong>100+</strong><span>Job Updates</span></div>
+                            <div class="pro-stat"><div class="stat-icon">🎓</div><strong>25+</strong><span>Education Updates</span></div>
+                            <div class="pro-stat"><div class="stat-icon">📢</div><strong>24/7</strong><span>Latest News</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="news-container">
+            <div class="news">
+                <div class="news-label">🔴 BREAKING</div>
+                <div class="news-text">
+                    <span>
+                        📢 Latest Government Updates &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        💼 New Job Notifications &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        🎓 Admission Updates (ITI, Diploma, College) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        💰 Scholarship Updates (Digital Gujarat, MYSY, NSP) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        📝 Online Forms
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- =======================================================
+             WHATSAPP COMMUNITY & WORKSPACE GALLERY
+        ======================================================== -->
+        <section class="community-section">
+            <div class="community-container">
+                <div class="community-text">
+                    <h2>🌟 મકવાણા ગ્રુપ ઓફ સર્વિસ<br><span style="color:#2563eb;">ડિજિટલ ભારત, સશક્ત ભારત! 🇮🇳</span></h2>
+                    <p>શું તમે રોજ નવી સરકારી યોજનાઓ, નોકરીની ભરતીઓ અને સ્કોલરશિપની માહિતી શોધવામાં કંટાળી ગયા છો? હવે ચિંતા છોડો! તમારી દરેક ડિજિટલ જરૂરિયાત અને ફોર્મ ભરવા માટેનું એકમાત્ર વિશ્વસનીય સ્થળ એટલે <strong>'મકવાણા ગ્રુપ ઓફ સર્વિસ'</strong>.</p>
+                    <p>હજારો વિદ્યાર્થીઓ અને નાગરિકો અમારી સાથે જોડાયેલા છે. આજે જ અમારા ઓફિશિયલ WhatsApp ગ્રુપમાં જોડાવો અને તમામ અગત્યના ફોર્મ્સ અને લેટેસ્ટ અપડેટ્સ મેળવો સીધા તમારા ફોનમાં, સૌથી પહેલાં! ક્યારેય કોઈ તક ચૂકશો નહિ. 👇</p>
+                    <a href="https://wa.me/919274314635" target="_blank" class="btn-wa-join">
+                        💬 Join Official WhatsApp Group
+                    </a>
+                </div>
+                
+                <div class="community-gallery">
+                    <div class="gallery-track" title="Hover to Pause">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop" alt="Workspace 1">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="Workspace 2">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop" alt="Workspace 3">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="Workspace 4">
+                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=800&auto=format&fit=crop" alt="Workspace 5">
+
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop" alt="Workspace 1 Loop">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="Workspace 2 Loop">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop" alt="Workspace 3 Loop">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop" alt="Workspace 4 Loop">
+                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=800&auto=format&fit=crop" alt="Workspace 5 Loop">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- ================= 2. SERVICES PAGE ================= -->
+    <div id="servicesPage" class="page-section">
+        <section class="page-padding">
+            <div class="title">
+                <span class="mini">OUR SERVICES</span>
+                <h2>⚡ Digital Services</h2>
+                <p>તમારી જરૂરિયાતની દરેક મહત્વપૂર્ણ સેવા</p>
+            </div>
+
+            <div class="grid">
+                <div class="card" onclick="openModal('panModal')">
+                    <div class="icon">🪪</div>
+                    <h3>PAN Card</h3>
+                    <p>PAN Card application અને જરૂરી માહિતી.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+
+                <div class="card" onclick="openModal('aadhaarModal')">
+                    <div class="icon">🆔</div>
+                    <h3>Aadhaar</h3>
+                    <p>Aadhaar સંબંધિત services અને updates.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+                
+                <div class="card" onclick="openModal('voterModal')">
+                    <div class="icon">🗳️</div>
+                    <h3>ચૂંટણી કાર્ડ</h3>
+                    <p>નવું ચૂંટણી કાર્ડ અને સુધારાની માહિતી.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+
+                <div class="card" onclick="openModal('eshramModal')">
+                    <div class="icon">👷</div>
+                    <h3>E-Shram</h3>
+                    <p>E-Shram Card સંબંધિત માહિતી.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+
+                <div class="card" onclick="openModal('ayushmanModal')">
+                    <div class="icon">🏥</div>
+                    <h3>Ayushman</h3>
+                    <p>Ayushman Card સંબંધિત information.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+                
+                <div class="card" onclick="openModal('avakModal')">
+                    <div class="icon">📄</div>
+                    <h3>આવકનો દાખલો</h3>
+                    <p>Income Certificate માટે જરૂરી ડોક્યુમેન્ટ્સ.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+
+                <div class="card" onclick="openModal('noncreamyModal')">
+                    <div class="icon">📜</div>
+                    <h3>Non-Creamy Layer</h3>
+                    <p>નોન-ક્રીમીલેયર સર્ટિફિકેટ કાઢવાની માહિતી.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+
+                <div class="card" onclick="openModal('jatiModal')">
+                    <div class="icon">🧑‍🤝‍🧑</div>
+                    <h3>જાતિનો દાખલો</h3>
+                    <p>Caste Certificate માટેની જરૂરી માહિતી.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+
+                <div class="card" onclick="openModal('ewsModal')">
+                    <div class="icon">🏛️</div>
+                    <h3>EWS Certificate</h3>
+                    <p>આર્થિક રીતે નબળા વર્ગ (EWS) નું સર્ટિફિકેટ.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+
+                <div class="card" onclick="openModal('pfModal')">
+                    <div class="icon">🏦</div>
+                    <h3>PF Services</h3>
+                    <p>UAN Activation, PF ઉપાડવા અને KYC.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+
+                <div class="card" onclick="openModal('marriageModal')">
+                    <div class="icon">💑</div>
+                    <h3>Marriage Certificate</h3>
+                    <p>લગ્ન નોંધણી પ્રમાણપત્ર કઢાવવા માટે.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+
+                <div class="card" onclick="openModal('policeModal')">
+                    <div class="icon">👮</div>
+                    <h3>પોલીસનો દાખલો</h3>
+                    <p>Police Clearance Certificate (PCC) માહિતી.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+                
+                <div class="card" onclick="openModal('rationModal')">
+                    <div class="icon">📙</div>
+                    <h3>Ration Card</h3>
+                    <p>રેશનકાર્ડમાં નામ ચડાવવા / કમી કરવા.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+
+                <div class="card" onclick="openModal('resumeModal')">
+                    <div class="icon">📝</div>
+                    <h3>Resume (CV)</h3>
+                    <p>નોકરી માટે પ્રોફેશનલ રિઝ્યુમે / CV બનાવવા.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+
+                <div class="card" onclick="openModal('udhyogModal')">
+                    <div class="icon">🏭</div>
+                    <h3>ઉદ્યોગ આધાર</h3>
+                    <p>Udhyog Aadhaar (MSME) રજીસ્ટ્રેશન.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+
+                <div class="card" onclick="openModal('satbarModal')">
+                    <div class="icon">🗺️</div>
+                    <h3>૭/૧૨ અને ૮-અ</h3>
+                    <p>જમીનના ૭/૧૨ અને ૮-અ ના ઉતારા.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+
+                <div class="card" onclick="openModal('vahaliModal')">
+                    <div class="icon">👧</div>
+                    <h3>વહાલી દીકરી યોજના</h3>
+                    <p>દીકરીઓ માટે સરકારની આર્થિક સહાય યોજના.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+
+                <div class="card" onclick="openModal('passportModal')">
+                    <div class="icon">🛂</div>
+                    <h3>Indian Passport</h3>
+                    <p>નવો ઇન્ડિયન પાસપોર્ટ કઢાવવા માટે.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+
+                <div class="card" onclick="openModal('vimoModal')">
+                    <div class="icon">🛵</div>
+                    <h3>ટુ-વ્હીલર વીમો</h3>
+                    <p>બાઈક કે એક્ટિવા માટે ઇન્શ્યોરન્સ (Vimo).</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+
+                <div class="card" onclick="openModal('jobsModal')">
+                    <div class="icon">💼</div>
+                    <h3>Government Jobs</h3>
+                    <p>નવી Government Recruitment updates.</p>
+                    <span class="card-link">View Jobs →</span>
+                </div>
+
+                <div class="card" onclick="openModal('admissionModal')">
+                    <div class="icon">🎓</div>
+                    <h3>Admission</h3>
+                    <p>ITI, Diploma, College admission updates.</p>
+                    <span class="card-link">View Updates →</span>
+                </div>
+
+                <div class="card" onclick="openModal('scholarshipModal')">
+                    <div class="icon">💰</div>
+                    <h3>Scholarship</h3>
+                    <p>Student scholarship અને schemes.</p>
+                    <span class="card-link">View Updates →</span>
+                </div>
+
+                <div class="card" onclick="openModal('kuvarbaiModal')">
+                    <div class="icon">💍</div>
+                    <h3>Kuvarbai Nu Mameru</h3>
+                    <p>લગ્ન સહાય યોજના સંબંધિત માહિતી.</p>
+                    <span class="card-link">Apply Now →</span>
+                </div>
+                
+                <div class="card" onclick="openModal('abhaModal')">
+                    <div class="icon">🩺</div>
+                    <h3>ABHA Card</h3>
+                    <p>ABHA (Health ID) Card બનાવવાની માહિતી.</p>
+                    <span class="card-link">View Service →</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- ================= 3. UPDATES & JOBS PAGE ================= -->
+    <div id="updatesPage" class="page-section">
+        <section class="page-padding" style="padding-bottom: 20px; min-height: auto;">
+            <div class="title" style="margin-bottom: 30px;">
+                <span class="mini">SMART SEARCH</span>
+                <h2>🔎 Search Information</h2>
+                <p>Job, Form, Scheme અથવા Scholarship શોધો</p>
+            </div>
+            <div class="search-area">
+                <div class="search">
+                    <input id="searchInput" type="text" placeholder="PAN, Aadhaar, PF, Voter ID, Passport..." onkeyup="searchSite()">
+                    <button onclick="searchSite()">Search</button>
+                </div>
+                <div id="searchResult"></div>
+            </div>
+        </section>
+
+        <section class="page-padding" style="padding-top: 20px;">
+            <div class="title">
+                <span class="mini">LATEST NEWS</span>
+                <h2>📢 Latest Updates</h2>
+            </div>
+            <div class="filters">
+                <button class="filter active" onclick="filterData('all',this)">All</button>
+                <button class="filter" onclick="filterData('job',this)">💼 Jobs</button>
+                <button class="filter" onclick="filterData('education',this)">🎓 Education</button>
+                <button class="filter" onclick="filterData('scheme',this)">🏛️ Scheme</button>
+                <button class="filter" onclick="filterData('form',this)">📄 Forms</button>
+            </div>
+            <div class="grid">
+                <div class="card update" data-category="job" onclick="openModal('jobsModal')">
+                    <div class="update-top"><span class="new">NEW</span><span class="date">24 AUG 2026</span></div>
+                    <h3>💼 Government Job Updates</h3>
+                    <p>નવી ભરતી અને Government Job Notification અહીં publish કરી શકાય છે.</p>
+                    <span class="card-link">Read More →</span>
+                </div>
+
+                <div class="card update" data-category="education" onclick="openModal('admissionModal')">
+                    <div class="update-top"><span class="new">NEW</span><span class="date">2026</span></div>
+                    <h3>🎓 Admission Updates</h3>
+                    <p>ITI, Diploma, College Admission સંબંધિત નવી જાહેરાતો.</p>
+                    <span class="card-link">Read More →</span>
+                </div>
+
+                <div class="card update" data-category="scheme" onclick="openModal('scholarshipModal')">
+                    <div class="update-top"><span class="new">LATEST</span><span class="date">2026</span></div>
+                    <h3>💰 Scholarship Updates</h3>
+                    <p>Digital Gujarat, MYSY, NSP શિષ્યવૃત્તિ માટેની જાહેરાત.</p>
+                    <span class="card-link">Read More →</span>
+                </div>
+
+                <div class="card update" data-category="scheme" onclick="openModal('kuvarbaiModal')">
+                    <div class="update-top"><span class="new">OPEN</span><span class="date">2026</span></div>
+                    <h3>💍 Kuvarbai Nu Mameru</h3>
+                    <p>લગ્ન સહાય યોજના ફોર્મ અને ડોક્યુમેન્ટ્સ.</p>
+                    <span class="card-link">Apply / Details →</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- ================= 4. ABOUT PAGE ================= -->
+    <div id="aboutPage" class="page-section">
+        <section class="page-padding">
+            <div class="title" style="margin-bottom: 40px;">
+                <span class="mini">KNOW MORE</span>
+                <h2>અમારા વિશે (About Us)</h2>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1000&auto=format&fit=crop" alt="Makwana Group Office">
+                </div>
+                <div class="about-content">
+                    <h2>MAKWANA GROUP OF SERVICES</h2>
+                    <p>નમસ્તે! મારું નામ <strong>Makwana Paresh</strong> છે. છેલ્લા ૬ વર્ષથી કોમન સર્વિસ સેન્ટર (CSC) અને ડિજિટલ સેવાઓ ક્ષેત્રે કામ કરવાના બહોળા અનુભવ સાથે મેં 'મકવાણા ગ્રુપ ઓફ સર્વિસ' ની શરૂઆત કરી છે.</p>
+                    <p>અમારો મુખ્ય હેતુ લોકોને સરકારી યોજનાઓ, ઓનલાઇન ફોર્મ, નોકરીની માહિતી અને સ્કોલરશિપ માટે પડતી મુશ્કેલીઓ દૂર કરવાનો છે. અમે એક એવું સ્માર્ટ અને આધુનિક ડિજિટલ પ્લેટફોર્મ પૂરું પાડીએ છીએ, જ્યાં તમને ઘરે બેઠા પાન કાર્ડ, આધાર સેવાઓ, રેશનકાર્ડ અને વિવિધ પ્રમાણપત્રોની સચોટ માહિતી સરળતાથી મળી રહે.</p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature-box">
+                            <h4>🎯 Our Mission</h4>
+                            <p>દરેક નાગરિકને ઝડપી, સુરક્ષિત અને સચોટ ડિજિટલ સેવાઓ પૂરી પાડવી અને તેમનો સમય બચાવવો.</p>
+                        </div>
+                        <div class="about-feature-box">
+                            <h4>💡 Our Vision</h4>
+                            <p>ડિજિટલ ઇન્ડિયાના સ્વપ્નને સાકાર કરી, પેપરલેસ અને સ્માર્ટ વર્કને સતત પ્રોત્સાહન આપવું.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- ================= 5. CONTACT PAGE (WITH SOCIAL MEDIA) ================= -->
+    <div id="contactPage" class="page-section">
+        <section class="page-padding">
+            <div class="title">
+                <span class="mini">GET IN TOUCH</span>
+                <h2>📞 Contact Us</h2>
+                <p>Digital Services માટે સંપર્ક કરો</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="big">👤</div>
+                    <h3>Founder</h3>
+                    <p>Makwana Paresh</p>
+                </div>
+                <div class="contact-card">
+                    <div class="big">🏢</div>
+                    <h3>Company</h3>
+                    <p>MAKWANA GROUP OF SERVICES</p>
+                </div>
+                <div class="contact-card">
+                    <div class="big">📞</div>
+                    <h3>Call Us</h3>
+                    <p><a href="tel:+919274314635" style="color:#0f172a; text-decoration:none; font-weight:900; font-size:18px;">+91 9274314635</a></p>
+                </div>
+            </div>
+
+            <!-- SOCIAL MEDIA SECTION -->
+            <div style="margin-top: 60px; text-align: center; padding-top: 40px;">
+                <h3 style="color:#0f172a; font-size: 26px; font-weight: 900; margin-bottom: 25px;">🌐 Follow Us On Social Media</h3>
+                
+                <div class="social-container">
+                    <a href="https://www.instagram.com/_makwana_group_of_services?igsi=Yjh2cWloNDQwanNj" target="_blank" class="social-btn btn-insta">
+                        📸 Instagram
+                    </a>
+                    
+                    <a href="https://youtube.com/@makwanagroup_001?si=RS6WOnoLSW5K_sAw" target="_blank" class="social-btn btn-yt">
+                        ▶️ YouTube
+                    </a>
+                    
+                    <a href="https://www.facebook.com/share/1ByzuBSkvY/" target="_blank" class="social-btn btn-fb">
+                        📘 Facebook
+                    </a>
+                </div>
+            </div>
+            
+            <!-- CONTACT FOOTER BANNER -->
+            <div class="contact-footer-banner">
+                <div class="contact-footer-text">
+                    <h3>🤝 હંમેશા તમારી સેવામાં...</h3>
+                    <p>Makwana Group of Services નો એક જ ઉદ્દેશ્ય છે - તમારું કામ એકદમ ઝડપી, સુરક્ષિત અને સરળ બનાવવું. કોઈપણ ઓનલાઈન ફોર્મ, સરકારી યોજના કે ડિજિટલ સર્વિસ માટે નિઃસંકોચ અમારો સંપર્ક કરો.</p>
+                    <a href="https://wa.me/919274314635" target="_blank" class="btn btn-outline-home" style="display:inline-flex; border-color:#ffffff; color:#ffffff;">💬 Message on WhatsApp</a>
+                </div>
+                <div class="contact-footer-images">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop" alt="Customer Support">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=600&auto=format&fit=crop" alt="Digital Handshake">
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+<h3>🚀 MAKWANA GROUP OF SERVICES</h3>
+<p>Digital Services • Online Forms • Latest Updates</p>
+<p>Founder: Makwana Paresh</p>
+<p>📞 Call / WhatsApp: <a href="tel:+919274314635" style="color:#e2e8f0; text-decoration:none; font-weight: bold;">+91 9274314635</a></p>
+<p style="margin-top: 25px; opacity: 0.4; font-size: 13px;">© 2026 All Rights Reserved</p>
+</footer>
+
+<a href="https://wa.me/919274314635" target="_blank" class="whatsapp" title="WhatsApp પર સંપર્ક કરો">💬</a>
+
+
+<!-- =========================================================================
+                                 ALL MODALS 
+========================================================================== -->
+
+<!-- 1. PAN CARD MODAL -->
+<div id="panModal" class="modal-overlay">
+    <div class="modal-box modal-box-pan">
+        <div class="modal-header">
+            <h3 style="color:#2563eb;">🪪 PAN Card</h3>
+            <button class="close-btn" onclick="closeModal('panModal')">×</button>
+        </div>
+        <div class="modal-tabs-pan">
+            <button class="tab-btn-pan active" onclick="switchTab('new-pan', this, '.tab-btn-pan', '.tab-content')">1. New PAN</button>
+            <button class="tab-btn-pan" onclick="switchTab('correction-pan', this, '.tab-btn-pan', '.tab-content')">2. Correction</button>
+        </div>
+        <div id="new-pan" class="tab-content active">
+            <ul class="doc-list-pan">
+                <li>✅ આધાર કાર્ડ (Aadhaar Card)</li>
+                <li>✅ પાસપોર્ટ સાઈઝ ફોટો (Passport Photo)</li>
+                <li>✅ સહી (Signature)</li>
+                <li>✅ મોબાઈલ નંબર (Mobile No)</li>
+                <li>✅ ઈમેલ આઈડી (Email ID)</li>
+            </ul>
+            <p style="margin-top: 15px; font-weight: bold; color: #0284c7;">અને નીચેનામાંથી કોઈપણ ૧ (Any One):</p>
+            <ul class="doc-list-pan" style="margin-top:10px;">
+                <li>🔹 ચૂંટણી કાર્ડ (Voter ID)</li>
+                <li>🔹 ઈ-શ્રમ કાર્ડ (E-Shram Card)</li>
+                <li>🔹 જન્મનો દાખલો (Birth Certificate)</li>
+            </ul>
+            <button class="wa-btn-large" onclick="applyOnWhatsApp('New PAN Card')">Apply on WhatsApp 💬</button>
+        </div>
+        <div id="correction-pan" class="tab-content">
+            <ul class="doc-list-pan">
+                <li>✅ આધાર કાર્ડ (Aadhaar Card)</li>
+                <li>✅ જૂનું પાન કાર્ડ (Old PAN Card)</li>
+                <li>✅ પાસપોર્ટ સાઈઝ ફોટો (Passport Photo)</li>
+                <li>✅ સહી (Signature)</li>
+            </ul>
+            <button class="wa-btn-large" onclick="applyOnWhatsApp('PAN Card Correction')">Apply on WhatsApp 💬</button>
+        </div>
+    </div>
+</div>
+
+<!-- 2. AADHAAR MODAL -->
+<div id="aadhaarModal" class="modal-overlay">
+    <div class="modal-box modal-box-aadhaar">
+        <div class="modal-header">
+            <h3 style="color:#ea580c;">🆔 Aadhaar Services</h3>
+            <button class="close-btn" onclick="closeModal('aadhaarModal')">×</button>
+        </div>
+        <div class="modal-tabs-aadhaar">
+            <button class="tab-btn-aadhaar active" onclick="switchTab('aadhaar-address', this, '.tab-btn-aadhaar', '.tab-content')">1. Address</button>
+            <button class="tab-btn-aadhaar" onclick="switchTab('aadhaar-download', this, '.tab-btn-aadhaar', '.tab-content')">2. Download</button>
+        </div>
+        <div id="aadhaar-address" class="tab-content active">
+            <ul class="doc-list-aadhaar">
+                <li>💡 લાઈટ બિલ (Light Bill)</li>
+                <li>📙 રેશન કાર્ડ (Ration Card)</li>
+                <li>👨‍👩‍👧‍👦 પરિવારના કોઈ પણ સભ્યનું આધાર કાર્ડ</li>
+            </ul>
+            <div style="background: #fff7ed; padding: 12px; border-left: 4px solid #f97316; margin-top: 15px; color: #c2410c; border-radius: 8px;"><b>નોંધ:</b> સરનામામાં સુધારો કરવા માટે આધાર સાથે મોબાઈલ નંબર લીંક હોવો જરૂરી છે.</div>
+            <button class="wa-btn-large" onclick="applyOnWhatsApp('Aadhaar Address Correction')">Apply on WhatsApp 💬</button>
+        </div>
+        <div id="aadhaar-download" class="tab-content">
+            <ul class="doc-list-aadhaar">
+                <li>🆔 જૂનું આધાર કાર્ડ અથવા આધાર નંબર</li>
+                <li>📱 આધાર સાથે લિંક મોબાઈલ નંબર</li>
+            </ul>
+            <button class="wa-btn-large" onclick="applyOnWhatsApp('Aadhaar Download')">Get on WhatsApp 💬</button>
+        </div>
+    </div>
+</div>
+
+<!-- 3. VOTER ID (CHUTANI CARD) MODAL -->
+<div id="voterModal" class="modal-overlay">
+    <div class="modal-box modal-box-voter">
+        <div class="modal-header">
+            <h3 style="color:#6d28d9; font-size:26px;">🗳️ ચૂંટણી કાર્ડ સેવાઓ</h3>
+            <button class="close-btn" onclick="closeModal('voterModal')">×</button>
+        </div>
+        
+        <div class="modal-tabs-voter">
+            <button class="tab-btn-voter active" onclick="switchTab('voter-new', this, '.tab-btn-voter', '.tab-content')">🆕 નવું ચૂંટણી કાર્ડ</button>
+            <button class="tab-btn-voter" onclick="switchTab('voter-correction', this, '.tab-btn-voter', '.tab-content')">✏️ કાર્ડમાં સુધારો</button>
+        </div>
+        
+        <div id="voter-new" class="tab-content active">
+            <div class="admin-card-badge" style="background:linear-gradient(135deg, #8b5cf6, #6d28d9);">
+                <h4>નવું ચૂંટણી કાર્ડ (New Voter ID)</h4>
+                <p>નવું ચૂંટણી કાર્ડ કઢાવવા માટે જરૂરી પુરાવા</p>
+            </div>
+            <ul class="doc-list-voter">
+                <li>✅ આધાર કાર્ડ (Aadhaar Card)</li>
+                <li>📸 પાસપોર્ટ સાઈઝ ફોટો (Passport Photo)</li>
+                <li>📄 જન્મ તારીખનો દાખલો (Birth Certificate)</li>
+                <li>💡 લાઈટ બિલ (Light Bill)</li>
+                <li>🏫 LC (શાળા છોડ્યાનું પ્રમાણપત્ર)</li>
+                <li>📱 મોબાઈલ નંબર (Mobile No.)</li>
+            </ul>
+            <button class="wa-btn-large" style="background:linear-gradient(135deg, #8b5cf6, #6d28d9); box-shadow: 0 10px 25px rgba(139,92,246,0.3);" onclick="applyOnWhatsApp('નવું ચૂંટણી કાર્ડ (New Voter ID)')">Apply on WhatsApp 💬</button>
+        </div>
+        
+        <div id="voter-correction" class="tab-content">
+            <div class="admin-card-badge" style="background:linear-gradient(135deg, #f59e0b, #d97706);">
+                <h4>ચૂંટણી કાર્ડમાં સુધારો</h4>
+                <p>ચૂંટણી કાર્ડમાં ભૂલ સુધારવા માટે જરૂરી ડોક્યુમેન્ટ્સ</p>
+            </div>
+            <ul class="doc-list-voter" style="border-color:#fef08a;">
+                <li style="color:#854d0e; background:#fefce8; border-color:#fef08a;">✅ આધાર કાર્ડ (Aadhaar Card)</li>
+                <li style="color:#854d0e; background:#fefce8; border-color:#fef08a;">🗳️ જૂનું ચૂંટણી કાર્ડ (Old Voter ID)</li>
+                <li style="color:#854d0e; background:#fefce8; border-color:#fef08a;">📸 પાસપોર્ટ સાઈઝ ફોટો</li>
+                <li style="color:#854d0e; background:#fefce8; border-color:#fef08a;">📄 જન્મ તારીખનો દાખલો</li>
+                <li style="color:#854d0e; background:#fefce8; border-color:#fef08a;">💡 લાઈટ બિલ (Light Bill)</li>
+                <li style="color:#854d0e; background:#fefce8; border-color:#fef08a;">🏫 LC (શાળા છોડ્યાનું પ્રમાણપત્ર)</li>
+                <li style="color:#854d0e; background:#fefce8; border-color:#fef08a;">📱 મોબાઈલ નંબર</li>
+            </ul>
+            <button class="wa-btn-large" style="background:linear-gradient(135deg, #f59e0b, #d97706); box-shadow: 0 10px 25px rgba(245,158,11,0.3);" onclick="applyOnWhatsApp('ચૂંટણી કાર્ડમાં સુધારો (Voter ID Correction)')">Apply on WhatsApp 💬</button>
+        </div>
+    </div>
+</div>
+
+<!-- 4. E-SHRAM MODAL -->
+<div id="eshramModal" class="modal-overlay">
+    <div class="modal-box modal-box-eshram">
+        <div class="modal-header">
+            <h3 style="color:#059669;">👷 E-Shram Card</h3>
+            <button class="close-btn" onclick="closeModal('eshramModal')">×</button>
+        </div>
+        <ul class="doc-list-eshram">
+            <li>✅ આધાર કાર્ડ (Aadhaar Card)</li>
+            <li>🏦 બેંક પાસબુક (Bank Passbook)</li>
+            <li>📱 આધાર સાથે લિંક મોબાઈલ નંબર</li>
+        </ul>
+        <button class="wa-btn-large" onclick="applyOnWhatsApp('E-Shram Card')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<!-- 5. AYUSHMAN MODAL -->
+<div id="ayushmanModal" class="modal-overlay">
+    <div class="modal-box modal-box-ayushman">
+        <div class="modal-header">
+            <h3 style="color:#db2777;">🏥 Ayushman Card</h3>
+            <button class="close-btn" onclick="closeModal('ayushmanModal')">×</button>
+        </div>
+        <ul class="doc-list-ayushman">
+            <li>✅ આધાર કાર્ડ ([Aadhaar Redacted])</li>
+            <li>📙 રેશન કાર્ડ (Ration Card)</li>
+            <li>📸 પાસપોર્ટ સાઈઝ ફોટો</li>
+        </ul>
+        <button class="wa-btn-large" onclick="applyOnWhatsApp('Ayushman Card')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<!-- 6. AVAK NO DAKHALO -->
+<div id="avakModal" class="modal-overlay">
+    <div class="modal-box modal-box-avak">
+        <div class="modal-header">
+            <h3 style="color:#16a34a; font-size:26px;">📄 આવકનો દાખલો</h3>
+            <button class="close-btn" onclick="closeModal('avakModal')">×</button>
+        </div>
+        <div class="admin-card-badge" style="background:linear-gradient(135deg, #22c55e, #16a34a);">
+            <h4>Income Certificate</h4>
+            <p>આવકનો દાખલો કાઢવા માટે જરૂરી પુરાવા</p>
+        </div>
+        <ul class="doc-list-avak">
+            <li>✅ આધાર કાર્ડ ([Aadhaar Redacted])</li>
+            <li>📙 રેશન કાર્ડ (Ration Card)</li>
+            <li>💡 લાઈટ બિલ (Light Bill)</li>
+        </ul>
+        <button class="wa-btn-large" style="background:linear-gradient(135deg, #22c55e, #16a34a); box-shadow: 0 10px 25px rgba(34,197,94,0.3);" onclick="applyOnWhatsApp('આવકનો દાખલો (Income Certificate)')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<!-- 7. NON-CREAMY LAYER -->
+<div id="noncreamyModal" class="modal-overlay">
+    <div class="modal-box modal-box-noncreamy">
+        <div class="modal-header">
+            <h3 style="color:#ca8a04; font-size:26px;">📜 Non-Creamy Layer</h3>
+            <button class="close-btn" onclick="closeModal('noncreamyModal')">×</button>
+        </div>
+        <div class="admin-card-badge" style="background:linear-gradient(135deg, #eab308, #ca8a04);">
+            <h4>નોન-ક્રીમીલેયર સર્ટિફિકેટ</h4>
+            <p>જરૂરી ડોક્યુમેન્ટ્સનું લિસ્ટ</p>
+        </div>
+        <ul class="doc-list-ncl">
+            <li>✅ વિદ્યાર્થી અને વાલીનું આધાર કાર્ડ</li>
+            <li>🏫 વિદ્યાર્થી અને વાલીનું LC (શાળા છોડ્યાનું પ્રમાણપત્ર)</li>
+            <li>📄 પિતાનો આવકનો દાખલો</li>
+            <li>🎓 વિદ્યાર્થીની છેલ્લી માર્કશીટ</li>
+            <li>⚖️ વાલીનું સોગંદનામું (Affidavit)</li>
+            <li>📙 રેશનકાર્ડ</li>
+            <li>📜 વિદ્યાર્થીનો જાતિનો દાખલો</li>
+        </ul>
+        <button class="wa-btn-large" style="background:linear-gradient(135deg, #eab308, #ca8a04); box-shadow: 0 10px 25px rgba(202,138,4,0.3);" onclick="applyOnWhatsApp('Non-Creamy Layer Certificate')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<!-- 8. JATI NO DAKHALO -->
+<div id="jatiModal" class="modal-overlay">
+    <div class="modal-box modal-box-jati">
+        <div class="modal-header">
+            <h3 style="color:#6d28d9; font-size:26px;">🧑‍🤝‍🧑 જાતિનો દાખલો</h3>
+            <button class="close-btn" onclick="closeModal('jatiModal')">×</button>
+        </div>
+        <div class="admin-card-badge" style="background:linear-gradient(135deg, #8b5cf6, #6d28d9);">
+            <h4>Caste Certificate</h4>
+            <p>જરૂરી ડોક્યુમેન્ટ્સનું લિસ્ટ</p>
+        </div>
+        <ul class="doc-list-jati">
+            <li>✅ વિદ્યાર્થી અને વાલીનું આધાર કાર્ડ</li>
+            <li>🏫 વિદ્યાર્થીનું LC (શાળા છોડ્યાનું પ્રમાણપત્ર)</li>
+            <li>📄 પિતા/દાદા/કાકા/ફઈનું LC</li>
+            <li>📙 રેશનકાર્ડ</li>
+        </ul>
+        <button class="wa-btn-large" style="background:linear-gradient(135deg, #8b5cf6, #6d28d9); box-shadow: 0 10px 25px rgba(109,40,217,0.3);" onclick="applyOnWhatsApp('જાતિનો દાખલો (Caste Certificate)')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<!-- 9. EWS CERTIFICATE -->
+<div id="ewsModal" class="modal-overlay">
+    <div class="modal-box modal-box-ews">
+        <div class="modal-header">
+            <h3 style="color:#be123c; font-size:26px;">🏛️ EWS Certificate</h3>
+            <button class="close-btn" onclick="closeModal('ewsModal')">×</button>
+        </div>
+        <div class="admin-card-badge" style="background:linear-gradient(135deg, #ef4444, #be123c);">
+            <h4>આર્થિક નબળા વર્ગનું પ્રમાણપત્ર</h4>
+            <p>જરૂરી ડોક્યુમેન્ટ્સનું લિસ્ટ</p>
+        </div>
+        <ul class="doc-list-ews">
+            <li>✅ વિદ્યાર્થી અને વાલીનું આધાર કાર્ડ</li>
+            <li>🏫 વિદ્યાર્થી અને વાલીનું LC (શાળા છોડ્યાનું પ્રમાણપત્ર)</li>
+            <li>📄 પિતાનો આવકનો દાખલો</li>
+            <li>🎓 વિદ્યાર્થીની છેલ્લી માર્કશીટ</li>
+            <li>⚖️ વાલીનું સોગંદનામું (Affidavit)</li>
+            <li>📙 રેશનકાર્ડ</li>
+        </ul>
+        <button class="wa-btn-large" style="background:linear-gradient(135deg, #ef4444, #be123c); box-shadow: 0 10px 25px rgba(190,18,60,0.3);" onclick="applyOnWhatsApp('EWS Certificate')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<!-- 10. PF SERVICE MODAL -->
+<div id="pfModal" class="modal-overlay">
+    <div class="modal-box modal-box-pf">
+        <div class="modal-header">
+            <h3 style="color:#0284c7; font-size:26px;">🏦 PF Services</h3>
+            <button class="close-btn" onclick="closeModal('pfModal')">×</button>
+        </div>
+        <div class="admin-card-badge" style="background:linear-gradient(135deg, #0ea5e9, #0284c7);">
+            <h4>પીએફ (PF) ને લગતા તમામ કામ</h4>
+            <p>UAN Activation, PF Withdrawal, KYC, Exit Mark</p>
+        </div>
+        <ul class="doc-list-pf">
+            <li>✅ આધાર કાર્ડ (Aadhaar Card)</li>
+            <li>🏦 બેંક પાસબુક (Bank Passbook)</li>
+            <li>🪪 પાન કાર્ડ (PAN Card)</li>
+            <li>🔢 UAN નંબર (UAN No.)</li>
+            <li>📱 મોબાઈલ નંબર (Mobile No.)</li>
+        </ul>
+        <button class="wa-btn-large" style="background:linear-gradient(135deg, #0ea5e9, #0284c7); box-shadow: 0 10px 25px rgba(14,165,233,0.3);" onclick="applyOnWhatsApp('PF Services (Withdrawal/KYC/UAN)')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<!-- 11. MARRIAGE CERTIFICATE MODAL -->
+<div id="marriageModal" class="modal-overlay">
+    <div class="modal-box modal-box-marriage">
+        <div class="modal-header">
+            <h3 style="color:#db2777; font-size:26px;">💑 મેરેજ સર્ટિફિકેટ</h3>
+            <button class="close-btn" onclick="closeModal('marriageModal')">×</button>
+        </div>
+        <div class="admin-card-badge" style="background:linear-gradient(135deg, #ec4899, #be185d);">
+            <h4>Marriage Registration</h4>
+            <p>લગ્ન નોંધણી પ્રમાણપત્ર માટે જરૂરી પુરાવા</p>
+        </div>
+        <ul class="doc-list-marriage">
+            <li>✅ કન્યા અને યુવકનો જન્મનો દાખલો અથવા LC</li>
+            <li>✅ કન્યા અને યુવકનું આધાર કાર્ડ</li>
+            <li>👥 બે સાક્ષીના આધાર કાર્ડ</li>
+            <li>💌 લગ્ન કંકોત્રી (Wedding Invitation)</li>
+            <li>🙏 ગોર મહારાજનું આધાર કાર્ડ</li>
+            <li>📸 બંને વ્યક્તિના બે-બે પાસપોર્ટ સાઈઝ ફોટા</li>
+        </ul>
+        <button class="wa-btn-large" style="background:linear-gradient(135deg, #ec4899, #be185d); box-shadow: 0 10px 25px rgba(236,72,153,0.3);" onclick="applyOnWhatsApp('Marriage Certificate')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<!-- 12. POLICE NO DAKHALO MODAL -->
+<div id="policeModal" class="modal-overlay">
+    <div class="modal-box modal-box-police">
+        <div class="modal-header">
+            <h3 style="color:#475569; font-size:26px;">👮 પોલીસનો દાખલો</h3>
+            <button class="close-btn" onclick="closeModal('policeModal')">×</button>
+        </div>
+        <div class="admin-card-badge" style="background:linear-gradient(135deg, #64748b, #475569);">
+            <h4>Police Clearance Certificate</h4>
+            <p>PCC કાઢવા માટે જરૂરી ડોક્યુમેન્ટ્સ</p>
+        </div>
+        <ul class="doc-list-police">
+            <li>✅ આધાર કાર્ડ (Aadhaar Card)</li>
+            <li>📸 પાસપોર્ટ સાઈઝ ફોટો (Passport Photo)</li>
+            <li>📱 મોબાઈલ નંબર (Mobile No.)</li>
+        </ul>
+        <button class="wa-btn-large" style="background:linear-gradient(135deg, #64748b, #475569); box-shadow: 0 10px 25px rgba(100,116,139,0.3);" onclick="applyOnWhatsApp('Police No Dakhalo (PCC)')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<!-- 13. RATION CARD MODAL -->
+<div id="rationModal" class="modal-overlay">
+    <div class="modal-box modal-box-ration">
+        <div class="modal-header">
+            <h3 style="color:#0891b2; font-size:26px;">📙 રેશનકાર્ડ સેવાઓ</h3>
+            <button class="close-btn" onclick="closeModal('rationModal')">×</button>
+        </div>
+        <div class="modal-tabs-ration">
+            <button class="tab-btn-ration active" onclick="switchTab('ration-add', this, '.tab-btn-ration', '.tab-content')">➕ નામ ચડાવવા</button>
+            <button class="tab-btn-ration" onclick="switchTab('ration-remove', this, '.tab-btn-ration', '.tab-content')">➖ નામ કમી કરવા</button>
+        </div>
+        <div id="ration-add" class="tab-content active">
+            <div class="admin-card-badge" style="background:linear-gradient(135deg, #06b6d4, #0891b2);">
+                <h4>રેશનકાર્ડમાં નામ ઉમેરો</h4>
+                <p>નવા સભ્યનું નામ ચડાવવા માટે પુરાવા</p>
+            </div>
+            <ul class="doc-list-ration">
+                <li>✅ મુખ્ય વ્યક્તિ તેમજ અરજદારનું આધાર કાર્ડ</li>
+                <li>📸 અરજદારનો પાસપોર્ટ સાઈઝ ફોટો</li>
+                <li>👶 <strong>બાળકો માટે:</strong> આધાર કાર્ડ અને જન્મનું પ્રમાણપત્ર</li>
+                <li>👰 <strong>લગ્ન બાદ:</strong> નામ કમીનો દાખલો અને લગ્ન કંકોત્રી/મેરેજ સર્ટિફિકેટ</li>
+            </ul>
+            <button class="wa-btn-large" style="background:linear-gradient(135deg, #06b6d4, #0891b2); box-shadow: 0 10px 25px rgba(6,182,212,0.3);" onclick="applyOnWhatsApp('રેશનકાર્ડમાં નામ ચડાવવા (Ration Card Add Name)')">Apply on WhatsApp 💬</button>
+        </div>
+        <div id="ration-remove" class="tab-content">
+            <div class="admin-card-badge" style="background:linear-gradient(135deg, #f59e0b, #d97706);">
+                <h4>રેશનકાર્ડમાંથી નામ કમી</h4>
+                <p>નામ કમી કરાવવા માટે જરૂરી ડોક્યુમેન્ટ્સ</p>
+            </div>
+            <ul class="doc-list-ration">
+                <li>✅ મુખ્ય વ્યક્તિ તેમજ અરજદારનું આધાર કાર્ડ</li>
+                <li>📙 ઓરિજિનલ રેશનકાર્ડ</li>
+                <li>📸 અરજદારનો પાસપોર્ટ સાઈઝ ફોટો</li>
+                <li>❓ <strong>નામ કમીનું કારણ:</strong> લગ્ન, મરણ અથવા સ્થળાંતરનો પુરાવો</li>
+            </ul>
+            <button class="wa-btn-large" style="background:linear-gradient(135deg, #f59e0b, #d97706); box-shadow: 0 10px 25px rgba(245,158,11,0.3);" onclick="applyOnWhatsApp('રેશનકાર્ડમાંથી નામ કમી કરવા (Ration Card Remove Name)')">Apply on WhatsApp 💬</button>
+        </div>
+    </div>
+</div>
+
+<!-- 14. RESUME MODAL -->
+<div id="resumeModal" class="modal-overlay">
+    <div class="modal-box modal-box-resume">
+        <div class="modal-header">
+            <h3 style="color:#0f766e; font-size:26px;">📝 Resume (CV)</h3>
+            <button class="close-btn" onclick="closeModal('resumeModal')">×</button>
+        </div>
+        <div class="admin-card-badge" style="background:linear-gradient(135deg, #14b8a6, #0f766e);">
+            <h4>પ્રોફેશનલ રિઝ્યુમે બનાવવા</h4>
+            <p>નોકરી માટે આકર્ષક CV બનાવવા જરૂરી માહિતી</p>
+        </div>
+        <ul class="doc-list-resume">
+            <li>✅ આધાર કાર્ડ (Aadhaar Card)</li>
+            <li>📸 પાસપોર્ટ સાઈઝ ફોટો (Passport Photo)</li>
+            <li>🎓 જેટલો અભ્યાસ નાખવાનો હોય તે માર્કશીટ</li>
+            <li>📧 ઈમેલ આઈડી (Email ID)</li>
+            <li>📱 મોબાઈલ નંબર (Mobile No.)</li>
+        </ul>
+        <button class="wa-btn-large" style="background:linear-gradient(135deg, #14b8a6, #0f766e); box-shadow: 0 10px 25px rgba(20,184,166,0.3);" onclick="applyOnWhatsApp('Create Professional Resume / CV')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<!-- 15. UDHYOG AADHAAR MODAL -->
+<div id="udhyogModal" class="modal-overlay">
+    <div class="modal-box modal-box-udhyog">
+        <div class="modal-header">
+            <h3 style="color:#b45309; font-size:26px;">🏭 ઉદ્યોગ આધાર</h3>
+            <button class="close-btn" onclick="closeModal('udhyogModal')">×</button>
+        </div>
+        <div class="admin-card-badge" style="background:linear-gradient(135deg, #f59e0b, #b45309);">
+            <h4>MSME Registration</h4>
+            <p>ઉદ્યોગ આધાર રજીસ્ટ્રેશન માટે જરૂરી પુરાવા</p>
+        </div>
+        <ul class="doc-list-udhyog">
+            <li>✅ આધાર કાર્ડ ([Aadhaar Redacted])</li>
+            <li>🪪 પાન કાર્ડ (PAN Card)</li>
+            <li>🏦 બેંક પાસબુક (Bank Passbook)</li>
+            <li>📱 મોબાઈલ નંબર (Mobile No.)</li>
+            <li>📧 ઈમેલ આઈડી (Email ID)</li>
+        </ul>
+        <button class="wa-btn-large" style="background:linear-gradient(135deg, #f59e0b, #b45309); box-shadow: 0 10px 25px rgba(245,158,11,0.3);" onclick="applyOnWhatsApp('ઉદ્યોગ આધાર (Udhyog Aadhaar / MSME)')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<!-- 16. 7/12 & 8-A MODAL -->
+<div id="satbarModal" class="modal-overlay">
+    <div class="modal-box modal-box-712">
+        <div class="modal-header">
+            <h3 style="color:#047857; font-size:26px;">🗺️ ૭/૧૨ અને ૮-અ</h3>
+            <button class="close-btn" onclick="closeModal('satbarModal')">×</button>
+        </div>
+        <div class="admin-card-badge" style="background:linear-gradient(135deg, #10b981, #047857);">
+            <h4>જમીન ના ઉતારા (AnyRoR)</h4>
+            <p>૭/૧૨ અને ૮-અ ના ઉતારા કાઢવા માટેની વિગતો</p>
+        </div>
+        <ul class="doc-list-712">
+            <li>🗺️ <strong>સર્વે નંબર</strong> (Survey Number)</li>
+            <li>📖 <strong>ખાતા નંબર</strong> (Khata Number)</li>
+            <li>📍 <strong>જિલ્લો</strong> (District)</li>
+            <li>📌 <strong>તાલુકો</strong> (Taluka)</li>
+            <li>🏘️ <strong>ગામ</strong> (Village)</li>
+        </ul>
+        <button class="wa-btn-large" style="background:linear-gradient(135deg, #10b981, #047857); box-shadow: 0 10px 25px rgba(16,185,129,0.3);" onclick="applyOnWhatsApp('૭/૧૨ અને ૮-અ ના ઉતારા (7/12 & 8A Land Records)')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<!-- 17. VAHALI DIKARI YOJANA MODAL -->
+<div id="vahaliModal" class="modal-overlay">
+    <div class="modal-box modal-box-vahali">
+        <div class="modal-header">
+            <h3 style="color:#be123c; font-size:26px;">👧 વહાલી દીકરી યોજના</h3>
+            <button class="close-btn" onclick="closeModal('vahaliModal')">×</button>
+        </div>
+        <div class="admin-card-badge" style="background:linear-gradient(135deg, #f43f5e, #be123c);">
+            <h4>ગુજરાત સરકારની યોજના</h4>
+            <p>દીકરી માટે આર્થિક સહાયના ફોર્મ માટેના ડોક્યુમેન્ટ્સ</p>
+        </div>
+        <ul class="doc-list-vahali">
+            <li>📸 પાસપોર્ટ સાઇઝનો ફોટો</li>
+            <li>📄 દીકરીનો જન્મ દાખલો</li>
+            <li>✅ દીકરીનું આધાર કાર્ડ ([Aadhaar Redacted])</li>
+            <li>✅ માતા-પિતાનું આધાર કાર્ડ</li>
+            <li>💰 આવકનો દાખલો</li>
+            <li>📙 રેશનકાર્ડ</li>
+            <li>🏦 બેંક પાસબુક (દીકરી અથવા માતા-પિતાની)</li>
+            <li>🏫 માતા પિતાનો જન્મ તારીખનો દાખલો અથવા LC</li>
+        </ul>
+        <button class="wa-btn-large" style="background:linear-gradient(135deg, #f43f5e, #be123c); box-shadow: 0 10px 25px rgba(244,63,94,0.3);" onclick="applyOnWhatsApp('વહાલી દીકરી યોજના (Vahali Dikari Yojana)')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<!-- 18. INDIAN PASSPORT MODAL -->
+<div id="passportModal" class="modal-overlay">
+    <div class="modal-box modal-box-passport">
+        <div class="modal-header">
+            <h3 style="color:#1d4ed8; font-size:26px;">🛂 Indian Passport</h3>
+            <button class="close-btn" onclick="closeModal('passportModal')">×</button>
+        </div>
+        <div class="admin-card-badge" style="background:linear-gradient(135deg, #3b82f6, #1d4ed8);">
+            <h4>નવો પાસપોર્ટ એપ્લિકેશન</h4>
+            <p>ઇન્ડિયન પાસપોર્ટ કઢાવવા માટે જરૂરી પુરાવા</p>
+        </div>
+        <ul class="doc-list-passport">
+            <li>✅ આધાર કાર્ડ ([Aadhaar Redacted])</li>
+            <li>🪪 પાન કાર્ડ (PAN Card)</li>
+            <li>🏫 LC (શાળા છોડ્યાનું પ્રમાણપત્ર)</li>
+            <li>📄 જન્મ તારીખનો દાખલો (Birth Certificate)</li>
+            <li>📱 મોબાઈલ નંબર (Mobile No.)</li>
+            <li>📧 ઈમેલ આઈડી (Email ID)</li>
+        </ul>
+        <button class="wa-btn-large" style="background:linear-gradient(135deg, #3b82f6, #1d4ed8); box-shadow: 0 10px 25px rgba(59,130,246,0.3);" onclick="applyOnWhatsApp('નવો ઇન્ડિયન પાસપોર્ટ (Indian Passport)')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<!-- 19. TWO WHEELER VIMO MODAL -->
+<div id="vimoModal" class="modal-overlay">
+    <div class="modal-box modal-box-vimo">
+        <div class="modal-header">
+            <h3 style="color:#5b21b6; font-size:26px;">🛵 ટુ-વ્હીલર વીમો</h3>
+            <button class="close-btn" onclick="closeModal('vimoModal')">×</button>
+        </div>
+        <div class="admin-card-badge" style="background:linear-gradient(135deg, #8b5cf6, #5b21b6);">
+            <h4>Two-Wheeler Insurance</h4>
+            <p>બાઈક / એક્ટિવા ના વીમા માટે જરૂરી પુરાવા</p>
+        </div>
+        <ul class="doc-list-vimo">
+            <li>✅ આધાર કાર્ડ ([Aadhaar Redacted])</li>
+            <li>🏍️ RC બુક (RC Book)</li>
+            <li>🪪 પાન કાર્ડ (PAN Card)</li>
+        </ul>
+        <button class="wa-btn-large" style="background:linear-gradient(135deg, #8b5cf6, #5b21b6); box-shadow: 0 10px 25px rgba(139,92,246,0.3);" onclick="applyOnWhatsApp('ટુ-વ્હીલર વીમો (Two Wheeler Insurance)')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<!-- 20. GOVERNMENT JOBS MODAL -->
+<div id="jobsModal" class="modal-overlay">
+    <div class="modal-box modal-box-jobs">
+        <div class="modal-header">
+            <h3 style="color:#2563eb;">💼 Latest Government Jobs</h3>
+            <button class="close-btn" onclick="closeModal('jobsModal')">×</button>
+        </div>
+        <div class="sarkari-grid">
+            <a href="javascript:void(0)" class="sarkari-box sb-red" onclick="closeModal('jobsModal'); openModal('gdsModal');">
+                India Post Office GDS<br><small>(23757 Posts)</small>
+            </a>
+            <a href="javascript:void(0)" class="sarkari-box sb-orange">Daily 5 Minutes Meditation<br><small>& Crack Exams</small></a>
+            <a href="javascript:void(0)" class="sarkari-box sb-pink">SBI Clerk Online Form<br><small>(9124 Posts)</small></a>
+            <a href="javascript:void(0)" class="sarkari-box sb-darkblue">Rajasthan Safai Karmchari<br><small>(24,752 Posts)</small></a>
+        </div>
+    </div>
+</div>
+
+<!-- 21. INDIA POST GDS DETAILS POPUP -->
+<div id="gdsModal" class="modal-overlay modal-overlay-gds">
+    <div class="modal-box modal-box-gds">
+        <div class="modal-header">
+            <h3 style="color:#dc2626;">📮 India Post GDS</h3>
+            <button class="close-btn" onclick="closeModal('gdsModal')">×</button>
+        </div>
+        <div class="date-container">
+            <div class="date-box start-date"><span>Start Date</span><strong>31-08-2026</strong></div>
+            <div class="date-box end-date"><span>End Date</span><strong>19-09-2026</strong></div>
+        </div>
+        <ul class="doc-list" style="margin-top:20px;">
+            <li>✅ આધાર કાર્ડ (Aadhaar Card)</li>
+            <li>📸 પાસપોર્ટ સાઈઝ ફોટો</li>
+            <li>✍️ સહી (Signature)</li>
+        </ul>
+        <button class="wa-btn-large" onclick="applyOnWhatsApp('India Post GDS Form')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<!-- 22. ADMISSION MODAL -->
+<div id="admissionModal" class="modal-overlay">
+    <div class="modal-box modal-box-admission">
+        <div class="modal-header">
+            <h3 style="color:#7c3aed; font-size:26px;">🎓 Admission Portal</h3>
+            <button class="close-btn" onclick="closeModal('admissionModal')">×</button>
+        </div>
+        
+        <div class="modal-tabs-admission">
+            <button class="tab-btn-admission active" onclick="switchTab('iti-admin', this, '.tab-btn-admission', '.tab-content')">⚙️ ITI</button>
+            <button class="tab-btn-admission" onclick="switchTab('diploma-admin', this, '.tab-btn-admission', '.tab-content')">📜 Diploma</button>
+            <button class="tab-btn-admission" onclick="switchTab('college-admin', this, '.tab-btn-admission', '.tab-content')">🏛️ College</button>
+        </div>
+        
+        <div id="iti-admin" class="tab-content active">
+            <div class="admin-card-badge" style="background:linear-gradient(135deg, #6366f1, #8b5cf6);">
+                <h4>ITI Admission 2026</h4>
+                <p>10th Pass / 8th Pass Admission</p>
+            </div>
+            <ul class="doc-list-admission">
+                <li>📄 ૧૦મા / ૮મા ધોરણની માર્કશીટ (Marksheet)</li>
+                <li>🏫 શાળા છોડ્યાનું પ્રમાણપત્ર (School L.C.)</li>
+                <li>🆔 આધાર કાર્ડ ([Aadhaar Redacted])</li>
+                <li>🏦 બેંક પાસબુક (Bank Passbook)</li>
+                <li>📜 જાતિનો દાખલો (જો લાગુ પડે)</li>
+                <li>📸 પાસપોર્ટ સાઈઝ ફોટો અને સહી</li>
+            </ul>
+            <button class="wa-btn-large" style="background:linear-gradient(135deg, #6366f1, #8b5cf6); box-shadow: 0 10px 25px rgba(99,102,241,0.3);" onclick="applyOnWhatsApp('ITI Admission')">Apply for ITI on WhatsApp 💬</button>
+        </div>
+        
+        <div id="diploma-admin" class="tab-content">
+            <div class="admin-card-badge" style="background:linear-gradient(135deg, #f59e0b, #ea580c);">
+                <h4>Diploma Admission 2026</h4>
+                <p>Polytechnic Admission After 10th / 12th</p>
+            </div>
+            <ul class="doc-list-admission">
+                <li>📄 ૧૦મા / ૧૨મા ધોરણની માર્કશીટ</li>
+                <li>🏫 શાળા છોડ્યાનું પ્રમાણપત્ર (School L.C.)</li>
+                <li>🆔 આધાર કાર્ડ ([Aadhaar Redacted])</li>
+                <li>💰 આવકનો દાખલો (Income Certificate)</li>
+                <li>📜 જાતિનો દાખલો / Non-Creamy Layer</li>
+                <li>📸 પાસપોર્ટ સાઈઝ ફોટો અને સહી</li>
+            </ul>
+            <button class="wa-btn-large" style="background:linear-gradient(135deg, #f59e0b, #ea580c); box-shadow: 0 10px 25px rgba(245,158,11,0.3);" onclick="applyOnWhatsApp('Diploma Admission')">Apply for Diploma on WhatsApp 💬</button>
+        </div>
+
+        <div id="college-admin" class="tab-content">
+            <div class="admin-card-badge" style="background:linear-gradient(135deg, #10b981, #059669);">
+                <h4>College Admission 2026</h4>
+                <p>BA / B.Com / B.Sc / BCA / BBA</p>
+            </div>
+            <ul class="doc-list-admission">
+                <li>📄 ૧૨મા ધોરણની માર્કશીટ (12th Marksheet)</li>
+                <li>🏫 શાળા છોડ્યાનું પ્રમાણપત્ર (School L.C.)</li>
+                <li>🆔 આધાર કાર્ડ ([Aadhaar Redacted])</li>
+                <li>🏦 બેંક પાસબુક (Bank Passbook)</li>
+                <li>📜 જાતિ અને આવકનો દાખલો (જો લાગુ પડે)</li>
+                <li>📸 પાસપોર્ટ સાઈઝ ફોટો અને સહી</li>
+            </ul>
+            <button class="wa-btn-large" style="background:linear-gradient(135deg, #10b981, #059669); box-shadow: 0 10px 25px rgba(16,185,129,0.3);" onclick="applyOnWhatsApp('College Admission')">Apply for College on WhatsApp 💬</button>
+        </div>
+    </div>
+</div>
+
+<!-- 23. SCHOLARSHIP MODAL -->
+<div id="scholarshipModal" class="modal-overlay">
+    <div class="modal-box modal-box-scholarship">
+        <div class="modal-header">
+            <h3 style="color:#0284c7; font-size:26px;">💰 Scholarship Portal</h3>
+            <button class="close-btn" onclick="closeModal('scholarshipModal')">×</button>
+        </div>
+        
+        <div class="modal-tabs-scholarship">
+            <button class="tab-btn-scholarship active" onclick="switchTab('digital-gujarat', this, '.tab-btn-scholarship', '.tab-content')">💻 Digital Gujarat</button>
+            <button class="tab-btn-scholarship" onclick="switchTab('mysy', this, '.tab-btn-scholarship', '.tab-content')">🎓 MYSY</button>
+            <button class="tab-btn-scholarship" onclick="switchTab('nsp', this, '.tab-btn-scholarship', '.tab-content')">🇮🇳 NSP</button>
+        </div>
+        
+        <div id="digital-gujarat" class="tab-content active">
+            <div class="admin-card-badge" style="background:linear-gradient(135deg, #0284c7, #0369a1);">
+                <h4>Digital Gujarat Scholarship</h4>
+                <p>Gujarat State Government Scholarship</p>
+            </div>
+            <ul class="doc-list-scholarship">
+                <li>📄 ધો. 10, 11 અને 12 ની કોલેજ માર્કશીટ</li>
+                <li>📸 પાસપોર્ટ સાઈઝ ફોટો</li>
+                <li>📜 જાતિનો દાખલો (OBC, SC, ST માટે)</li>
+                <li>💰 આવકનો દાખલો</li>
+                <li>🆔 આધાર કાર્ડ (Aadhaar Card)</li>
+                <li>🏦 બેંક પાસબુક</li>
+                <li>🧾 ફી ભર્યાની પહોંચ</li>
+                <li>🏫 LC (શાળા છોડ્યાનું પ્રમાણપત્ર)</li>
+                <li>📙 રેશનકાર્ડ</li>
+            </ul>
+            <button class="wa-btn-large" style="background:linear-gradient(135deg, #0284c7, #0369a1); box-shadow: 0 10px 25px rgba(2,132,199,0.3);" onclick="applyOnWhatsApp('Digital Gujarat Scholarship')">Apply on WhatsApp 💬</button>
+        </div>
+        
+        <div id="mysy" class="tab-content">
+            <div class="admin-card-badge" style="background:linear-gradient(135deg, #0284c7, #0369a1);">
+                <h4>MYSY Scholarship</h4>
+                <p>Mukhyamantri Yuva Swavalamban Yojana</p>
+            </div>
+            <ul class="doc-list-scholarship">
+                <li>📄 ધો. 10, 11 અને 12 ની કોલેજ માર્કશીટ</li>
+                <li>📸 પાસપોર્ટ સાઈઝ ફોટો</li>
+                <li>📜 જાતિનો દાખલો (OBC, SC, ST માટે)</li>
+                <li>💰 આવકનો દાખલો</li>
+                <li>🆔 આધાર કાર્ડ (Aadhaar Card)</li>
+                <li>🏦 બેંક પાસબુક</li>
+                <li>🧾 ફી ભર્યાની પહોંચ</li>
+                <li>🏫 LC (શાળા છોડ્યાનું પ્રમાણપત્ર)</li>
+                <li>📙 રેશનકાર્ડ</li>
+            </ul>
+            <button class="wa-btn-large" style="background:linear-gradient(135deg, #0284c7, #0369a1); box-shadow: 0 10px 25px rgba(2,132,199,0.3);" onclick="applyOnWhatsApp('MYSY Scholarship')">Apply on WhatsApp 💬</button>
+        </div>
+
+        <div id="nsp" class="tab-content">
+            <div class="admin-card-badge" style="background:linear-gradient(135deg, #0284c7, #0369a1);">
+                <h4>NSP Scholarship</h4>
+                <p>National Scholarship Portal (Central Govt)</p>
+            </div>
+            <ul class="doc-list-scholarship">
+                <li>📄 ધો. 10, 11 અને 12 ની કોલેજ માર્કશીટ</li>
+                <li>📸 પાસપોર્ટ સાઈઝ ફોટો</li>
+                <li>📜 જાતિનો દાખલો (OBC, SC, ST માટે)</li>
+                <li>💰 આવકનો દાખલો</li>
+                <li>🆔 આધાર કાર્ડ (Aadhaar Card)</li>
+                <li>🏦 બેંક પાસબુક</li>
+                <li>🧾 ફી ભર્યાની પહોંચ</li>
+                <li>🏫 LC (શાળા છોડ્યાનું પ્રમાણપત્ર)</li>
+                <li>📙 રેશનકાર્ડ</li>
+            </ul>
+            <button class="wa-btn-large" style="background:linear-gradient(135deg, #0284c7, #0369a1); box-shadow: 0 10px 25px rgba(2,132,199,0.3);" onclick="applyOnWhatsApp('NSP Scholarship')">Apply on WhatsApp 💬</button>
+        </div>
+    </div>
+</div>
+
+<!-- 24. KUVARBAI NU MAMERU MODAL -->
+<div id="kuvarbaiModal" class="modal-overlay">
+    <div class="modal-box modal-box-kuvarbai">
+        <div class="modal-header">
+            <h3 style="color:#e11d48; font-size:26px;">💍 કુંવરબાઈનું મામેરું</h3>
+            <button class="close-btn" onclick="closeModal('kuvarbaiModal')">×</button>
+        </div>
+        <div class="admin-card-badge" style="background:linear-gradient(135deg, #f43f5e, #e11d48);">
+            <h4>લગ્ન સહાય યોજના</h4>
+            <p>ગુજરાત સરકાર દ્વારા આર્થિક સહાય</p>
+        </div>
+        <ul class="doc-list-kuvarbai">
+            <li>✅ કન્યા અને યુવકનું આધાર કાર્ડ ([Aadhaar Redacted])</li>
+            <li>✅ કન્યાના પિતાનું આધાર કાર્ડ ([Aadhaar Redacted])</li>
+            <li>💰 કન્યાના પિતાનો આવકનો દાખલો</li>
+            <li>🏦 કન્યાની બેંક પાસબુક (Bank Passbook)</li>
+            <li>📸 કન્યાનો પાસપોર્ટ સાઈઝ ફોટો</li>
+            <li>📜 મેરેજ સર્ટિફિકેટ (લગ્ન પ્રમાણપત્ર)</li>
+            <li>📙 રેશનકાર્ડ (Ration Card)</li>
+        </ul>
+        <button class="wa-btn-large kuvarbai-btn" onclick="applyOnWhatsApp('Kuvarbai Nu Mameru')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<!-- 25. ABHA CARD MODAL -->
+<div id="abhaModal" class="modal-overlay">
+    <div class="modal-box modal-box-abha">
+        <div class="modal-header">
+            <h3 style="color:#0d9488; font-size:26px;">🩺 ABHA Health Card</h3>
+            <button class="close-btn" onclick="closeModal('abhaModal')">×</button>
+        </div>
+        <div class="admin-card-badge" style="background:linear-gradient(135deg, #14b8a6, #0f766e);">
+            <h4>Ayushman Bharat Health Account</h4>
+            <p>ડિજિટલ હેલ્થ આઈડી કાર્ડ (Health ID)</p>
+        </div>
+        <ul class="doc-list-abha">
+            <li>✅ <strong>આધાર કાર્ડ</strong> ([Aadhaar Redacted])</li>
+            <li>📱 <strong>આધાર સાથે લિંક મોબાઈલ નંબર</strong> (Aadhaar linked Mobile No)</li>
+        </ul>
+        <button class="wa-btn-large abha-btn" onclick="applyOnWhatsApp('ABHA Card')">Apply on WhatsApp 💬</button>
+    </div>
+</div>
+
+<script>
+/* MOBILE MENU */
+function menuToggle(){ document.getElementById("nav").classList.toggle("show"); }
+
+/* SMART SEARCH ENGINE */
+const searchData = [
+    { title: "PAN Card", keywords: "pan pahn પાન કાર્ડ", icon: "🪪", desc: "PAN Card application અને જરૂરી માહિતી.", action: "openModal('panModal')" },
+    { title: "Aadhaar Services", keywords: "aadhar aadhaar adhar આધાર", icon: "🆔", desc: "Aadhaar સંબંધિત services અને updates.", action: "openModal('aadhaarModal')" },
+    { title: "ચૂંટણી કાર્ડ (Voter ID)", keywords: "voter id chutani card election ચૂંટણી", icon: "🗳️", desc: "નવું ચૂંટણી કાર્ડ અને સુધારાની માહિતી.", action: "openModal('voterModal')" },
+    { title: "E-Shram Card", keywords: "shram eshram labour શ્રમ", icon: "👷", desc: "E-Shram Card સંબંધિત માહિતી.", action: "openModal('eshramModal')" },
+    { title: "Ayushman Card", keywords: "ayushman health આયુષ્માન", icon: "🏥", desc: "Ayushman Card સંબંધિત information.", action: "openModal('ayushmanModal')" },
+    { title: "આવકનો દાખલો", keywords: "avak no dakhalo income certificate આવક", icon: "📄", desc: "Income Certificate માટે જરૂરી ડોક્યુમેન્ટ્સ.", action: "openModal('avakModal')" },
+    { title: "Non-Creamy Layer", keywords: "non creamy layer obc ncl નોન ક્રીમીલેયર", icon: "📜", desc: "નોન-ક્રીમીલેયર સર્ટિફિકેટ કાઢવાની માહિતી.", action: "openModal('noncreamyModal')" },
+    { title: "જાતિનો દાખલો", keywords: "jati no dakhalo caste certificate જાતિ", icon: "🧑‍🤝‍🧑", desc: "Caste Certificate માટેની જરૂરી માહિતી.", action: "openModal('jatiModal')" },
+    { title: "EWS Certificate", keywords: "ews certificate ebc દાખલો", icon: "🏛️", desc: "આર્થિક રીતે નબળા વર્ગ (EWS) નું સર્ટિફિકેટ.", action: "openModal('ewsModal')" },
+    { title: "PF Services", keywords: "pf providend fund uan kyc upadva પીએફ", icon: "🏦", desc: "UAN Activation, PF ઉપાડવા અને KYC.", action: "openModal('pfModal')" },
+    { title: "Marriage Certificate", keywords: "marriage lagna certificate merej મેરેજ લગ્ન નોંધણી", icon: "💑", desc: "લગ્ન નોંધણી પ્રમાણપત્ર કઢાવવા માટે.", action: "openModal('marriageModal')" },
+    { title: "પોલીસનો દાખલો", keywords: "police dakhalo pcc police clearance પોલીસ", icon: "👮", desc: "Police Clearance Certificate (PCC) માહિતી.", action: "openModal('policeModal')" },
+    { title: "Ration Card", keywords: "ration card reshan card રેશનકાર્ડ નામ ચડાવવા કમી", icon: "📙", desc: "રેશનકાર્ડમાં નામ ચડાવવા / કમી કરવા.", action: "openModal('rationModal')" },
+    { title: "Resume (CV)", keywords: "resume cv biodata નોકરી રિઝ્યુમે", icon: "📝", desc: "નોકરી માટે પ્રોફેશનલ રિઝ્યુમે / CV બનાવવા.", action: "openModal('resumeModal')" },
+    { title: "ઉદ્યોગ આધાર", keywords: "udhyog aadhaar msme license business ઉદ્યોગ", icon: "🏭", desc: "Udhyog Aadhaar (MSME) રજીસ્ટ્રેશન.", action: "openModal('udhyogModal')" },
+    { title: "૭/૧૨ અને ૮-અ", keywords: "satbar 7/12 8a land record જમીન ઉતારા", icon: "🗺️", desc: "જમીનના ૭/૧૨ અને ૮-અ ના ઉતારા.", action: "openModal('satbarModal')" },
+    { title: "વહાલી દીકરી યોજના", keywords: "vahali dikari yojana sahay દીકરી", icon: "👧", desc: "દીકરીઓ માટે સરકારની આર્થિક સહાય યોજના.", action: "openModal('vahaliModal')" },
+    { title: "Indian Passport", keywords: "passport visa travel પાસપોર્ટ", icon: "🛂", desc: "નવો ઇન્ડિયન પાસપોર્ટ કઢાવવા માટે.", action: "openModal('passportModal')" },
+    { title: "ટુ-વ્હીલર વીમો", keywords: "vimo insurance bike activa વીમો ઇન્શ્યોરન્સ", icon: "🛵", desc: "બાઈક કે એક્ટિવા માટે ઇન્શ્યોરન્સ (Vimo).", action: "openModal('vimoModal')" },
+    { title: "Government Jobs", keywords: "job jobs sarkari nokri નોકરી ભરતી", icon: "💼", desc: "નવી Government Recruitment updates.", action: "openModal('jobsModal')" },
+    { title: "India Post GDS", keywords: "post office gds postoffice ટપાલ", icon: "📮", desc: "India Post Office GDS Form (23757 Posts)", action: "openModal('gdsModal')" },
+    { title: "Admission", keywords: "admission college school iti diploma એડમિશન", icon: "🎓", desc: "ITI, Diploma, College admission updates.", action: "openModal('admissionModal')" },
+    { title: "Scholarship", keywords: "scholarship yojana સહાય digital gujarat mysy nsp", icon: "💰", desc: "Student scholarship અને schemes.", action: "openModal('scholarshipModal')" },
+    { title: "Kuvarbai Nu Mameru", keywords: "mameru kuvarbai marriage lagna lagn sahay યોજના", icon: "💍", desc: "લગ્ન સહાય યોજના સંબંધિત માહિતી.", action: "openModal('kuvarbaiModal')" },
+    { title: "ABHA Card", keywords: "abha health card id આભા હેલ્થ આઈડી", icon: "🩺", desc: "ABHA (Health ID) Card બનાવવાની માહિતી.", action: "openModal('abhaModal')" }
+];
+
+function searchSite(){
+    let input = document.getElementById('searchInput').value.toLowerCase().trim();
+    let resultContainer = document.getElementById('searchResult');
+
+    if(input === "") {
+        resultContainer.innerHTML = "";
+        return;
+    }
+
+    let filtered = searchData.filter(item => 
+        item.title.toLowerCase().includes(input) || 
+        item.keywords.toLowerCase().includes(input)
+    );
+
+    if(filtered.length > 0) {
+        let html = '<div class="grid" style="margin-top:20px; text-align:left;">';
+        filtered.forEach(item => {
+            html += `
+            <div class="card" onclick="${item.action}" style="animation: slideLeft 0.3s ease;">
+                <div class="icon">${item.icon}</div>
+                <h3>${item.title}</h3>
+                <p>${item.desc}</p>
+                <span class="card-link">View Service →</span>
+            </div>`;
+        });
+        html += '</div>';
+        resultContainer.innerHTML = html;
+    } else {
+        resultContainer.innerHTML = `<div class="no-result">❌ માફ કરશો, '<b style="color:#0f172a;">${input}</b>' સંબંધિત કોઈ માહિતી મળી નથી.</div>`;
+    }
+}
+
+/* CATEGORY FILTER */
+function filterData(category,button){
+    let cards = document.querySelectorAll(".update");
+    document.querySelectorAll(".filter").forEach(btn=>{ btn.classList.remove("active"); });
+    button.classList.add("active");
+    cards.forEach(card=>{
+        if(category==="all" || card.dataset.category===category){ card.style.display="block"; }
+        else{ card.style.display="none"; }
+    });
+}
+
+/* 100% WORKING MODAL ENGINE */
+function openModal(modalId) {
+    let modal = document.getElementById(modalId);
+    if(modal) { 
+        modal.classList.add('active'); 
+        document.body.style.overflow = 'hidden'; 
+    }
+}
+
+function closeModal(modalId) {
+    let modal = document.getElementById(modalId);
+    if(modal) { 
+        modal.classList.remove('active'); 
+        document.body.style.overflow = 'auto'; 
+    }
+}
+
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal-overlay')) {
+        event.target.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+/* PERFECT TAB SWITCHER */
+function switchTab(tabId, btnElement, btnClass, contentClass) {
+    let parentBox = btnElement.closest('div[class^="modal-box"]');
+    if(!parentBox) return;
+
+    let allBtns = parentBox.querySelectorAll(btnClass);
+    let allContents = parentBox.querySelectorAll(contentClass);
+
+    allBtns.forEach(btn => btn.classList.remove('active'));
+    allContents.forEach(content => content.classList.remove('active'));
+
+    btnElement.classList.add('active');
+    let target = document.getElementById(tabId);
+    if(target) target.classList.add('active');
+}
+
+/* WHATSAPP DIRECT MESSAGE */
+function applyOnWhatsApp(serviceName) {
+    let phoneNumber = "919274314635";
+    let message = "Hello Makwana Group, mare " + serviceName + " mate apply karvu che / vadhare mahiti joiye che. 🙏";
+    let whatsappUrl = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+    window.open(whatsappUrl, '_blank');
+}
+
+/* PAGE ROUTING (SPA) */
+function showSection(sectionId, btnElement = null) {
+    document.querySelectorAll('.page-section').forEach(sec => {
+        sec.classList.remove('active');
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+    });
+
+    document.getElementById(sectionId).classList.add('active');
+
+    if(btnElement) {
+        btnElement.classList.add('active');
+    } else {
+        let link = document.querySelector(`nav a[onclick*="${sectionId}"]`);
+        if(link) link.classList.add('active');
+    }
+
+    document.getElementById("nav").classList.remove("show");
+    window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
